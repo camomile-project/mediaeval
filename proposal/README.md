@@ -19,6 +19,7 @@ State what the task requires of participants.
 
 The REPERE challenge is an evaluation campaign on multimodal person recognition (phase 1 took place in January 2013 and phase 2 in January 2014). The main objective of this challenge is to answer the four following questions at any instant of the video: Who speaks? Who is seen? Whose name is pronounced? Whose name is written on screen? All modalities available (audio, image, external data, etc.) can be used for answering these questions
 
+![Propagation](propagation.png)
 
 To extend this challenge we propose a more applicative task. This task is based on a classical framework: return a list of shot where a person is speaking and appearing at the same time. Which we add an original dimension: no a priori knowledge on persons present in these videos. This implies the need to find the identity of person within a modality of the videos. This novelty leads us to the first subtask:
 
