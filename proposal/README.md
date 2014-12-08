@@ -13,7 +13,8 @@ Multimodal person discovery in TV broadcast
 ### Introduction
 
 ```
-Describe the motivating use scenario, i.e,. which application(s) motivate the task. State what the task requires of participants.
+Describe the motivating use scenario, i.e,. which application(s) motivate the task. 
+State what the task requires of participants.
 ```
 
 The REPERE challenge is an evaluation campaign on multimodal person recognition (phase 1 took place in January 2013 and phase 2 in January 2014). The main objective of this challenge is to answer the four following questions at any instant of the video: Who speaks? Who is seen? Whose name is pronounced? Whose name is written on screen? All modalities available (audio, image, external data, etc.) can be used for answering these questions
@@ -98,20 +99,30 @@ List 3-4 references related to the task that teams should have read before attem
 ## Task blurb
 
 ```
-￼Write 2-3 sentences that summarizes key information on the task. It should be informative and well- crafted to attract potential participants. A standard pattern is to have each sentence answer in turn the major questions about the task: First sentence: What is the input and the output of the algorithm that participants need to design for the task? Second sentence: What is the data? Third sentence: How is the
-￼task evaluated?
+￼Write 2-3 sentences that summarizes key information on the task.
+It should be informative and well- crafted to attract potential participants. 
+A standard pattern is to have each sentence answer in turn the major questions about the task: 
+First sentence: What is the input and the output of the algorithm that participants need to design for the task?
+Second sentence: What is the data? 
+Third sentence: How is the ￼task evaluated?
 ```
 
 ## Task organization team
 
 ```
-Write a short paragraph describing the organizing team. Your team should be large enough to handle organizing the task. Teams should consists of members from multiple research sites and multiple projects. A mix of experienced and early-career researchers is recommended. Note that your task team
-￼can add members after the proposal has been accepted.
+Write a short paragraph describing the organizing team. 
+Your team should be large enough to handle organizing the task. 
+Teams should consists of members from multiple research sites and multiple projects. 
+A mix of experienced and early-career researchers is recommended. 
+Note that your task team ￼can add members after the proposal has been accepted.
 ```
 
 ## Survey questions
 
 ```
-Write a list of questions (3-5) that you would like to include on the survey. These questions help you to ascertain the preferences of the research community for the aspects of the design of the task formulation, the data set design, and the evaluation methodology. For examples of the types of
-￼questions asked by tasks, please have a look at this .pdf for the MediaEval 2013 survey.
+Write a list of questions (3-5) that you would like to include on the survey. 
+These questions help you to ascertain the preferences of the research community for the aspects 
+of the design of the task formulation, the data set design, and the evaluation methodology. 
+For examples of the types of ￼questions asked by tasks, please have a look at this .pdf
+for the MediaEval 2013 survey.
 ```
