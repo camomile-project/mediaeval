@@ -148,15 +148,12 @@ For example, if N equal 30:
 1st case: There is more than 30 shots annotated during the post-eval
  - p1 returns 25 shots with 21 corrects (precision = 21/25)
  - p1 returns 30 shots with 27 corrects (precision = 27/30)
- - 41 shots are annotated during the post-eval with 37 corrects
- -> Recall P1 = 25/30
- -> Recall p2 = 27/30
+ - 41 shots are annotated during the post-eval with 37 corrects: recall_P1 = 25/30, recall_P2 = 27/30
+
 2st case: There is less than 30 shots annotated during the post-eval
  - p1 returns 5 shots with 4 corrects (precision = 4/5)
  - p1 returns 12 shots with 8 corrects  (precision = 8/12)
- - 15 shots are annotated during the post-eval with 9 corrects
- -> Recall P1 = 4/9
- -> Recall p2 = 8/9
+ - 15 shots are annotated during the post-eval with 9 corrects: recall_P1 = 4/9, recall_P2 = 8/9
 
 An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
 
