@@ -6,3 +6,4 @@ TODO list
 - [ ] Vérifier les vidéos (avi)
 - [ ] Vérifier le package ELDA
 - [ ] Outils de post-annotation / adjudication
+- [ ] Découpage dev/test corpus REPERE
