@@ -123,10 +123,9 @@ Requests (*e.g.* `First-Name_LAST-NAME`) will be selected a posteriori (*i.e.* a
 
 Ground truth will be created a posteriori by manually checking the top N shots (according to the `confidence` score) returned by each participants for each query. For each shot, both the person name itself (`Relevant`, `Irrelevant`, `Unsure`) and its proof (`Correct` or `Incorrect`) will be evaluated.
 
-  * A shot is `Relevant` if the annotator knows (based on personal knowledge) the name is correct or the proof makes it clear it is correct.  
-  * A shot is `Irrelevant` if the annotator knows (based on personal knowledge) the name is incorrect or the proof makes it clear it is incorrect.  
-  * A shot is `Unsure` if the annotator does not know the person and the proof does not help either.  
-
+  * A shot is `Relevant` if the annotator knows (based on personal knowledge) the name is correct or the proof makes it clear it is correct.
+  * A shot is `Irrelevant` if the annotator knows (based on personal knowledge) the name is incorrect or the proof makes it clear it is incorrect.
+  * A shot is `Unsure` if the annotator does not know the person and the proof does not help either.
   * A proof is `Correct` if it makes it clear the person name is correct.
   * A proof is `Incorrect` if it does not.
 
