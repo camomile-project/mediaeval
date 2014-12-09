@@ -182,6 +182,13 @@ A mix of experienced and early-career researchers is recommended.
 Note that your task team ￼can add members after the proposal has been accepted.
 ```
 
+  * Johann Poignant, LIMSI, France
+  * Hervé Bredin, LIMSI, France
+  * Claude Barras, LIMSI, France
+  * Juliette Kahn, LNE, France
+  * LIG ???
+
+
 ## Survey questions
 ```
 Write a list of questions (3-5) that you would like to include on the survey. 
