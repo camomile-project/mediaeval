@@ -91,10 +91,12 @@ List 3-4 references related to the task that teams should have read before attem
 
 ### List of task organizers
 
-  * Johann Poignant
-  * Claude Barras
-  * Hervé Bredin 
-  
+  * Johann Poignant, LIMSI, France
+  * Hervé Bredin, LIMSI, France
+  * Claude Barras, LIMSI, France
+  * Juliette Kahn, LNE, France
+  * LIG ???
+
 (firstname.lastname@limsi.fr)
 
 ## Task blurb
@@ -117,6 +119,13 @@ Teams should consists of members from multiple research sites and multiple proje
 A mix of experienced and early-career researchers is recommended. 
 Note that your task team ￼can add members after the proposal has been accepted.
 ```
+
+  * Johann Poignant, LIMSI, France
+  * Hervé Bredin, LIMSI, France
+  * Claude Barras, LIMSI, France
+  * Juliette Kahn, LNE, France
+  * LIG ???
+
 
 ## Survey questions
 ```
