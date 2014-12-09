@@ -8,7 +8,13 @@
 Give your task an informative title.
 ```
 
-Multimodal person discovery in TV broadcast
+Multimodal person discovery in TV Broadcast
+
+```
+Unsupervised  | Person | Discovery | in TV Broadcast
+Multi-modal   |        | Spotting  | 
+Cross-modal   |        | Naming
+```
 
 ### Introduction
 
@@ -151,7 +157,7 @@ Odyssey 2014, The Speaker and Language Recognition Workshop
 J. Poignant, L. Besacier, G. Quénot  
 *Unsupervised Speaker Identification in TV Broadcast Based on Written Names*  
 IEEE/ACM Transactions on Audio, Speech, and Language Processing  
-[?](http://)
+[PDF](https://hal.archives-ouvertes.fr/hal-01060827/document)
 
 ### List of task organizers
 
