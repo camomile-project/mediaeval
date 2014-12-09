@@ -48,20 +48,20 @@ The main novelty is that the list of persons is not provided *a priori* and the 
 ![Propagation](propagation.png)
 
 Participants are also asked to provide a proof for every result they return.
-A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be a different shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), the same shot where the person introduces themself (`proofSource = ASR`), or their Wikipedia page (`proofSource = wikipedia`).
+A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be a different shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), or the same shot where the person introduces themself (`proofSource = ASR`).
 
 ```
-shotVideo shotStartTime shotEndTime First-Name_LAST-NAME proofSource proofVideo proofStartTime proofEndTime
-shotVideo shotStartTime shotEndTime First-Name_LAST-NAME wikipedia http://wikipedia.org/...
+shotVideo shotStartTime shotEndTime First-Name_LAST-NAME confidence proofSource proofVideo proofStartTime proofEndTime
 ```
-  * `shotVideo`:
-  * `shotStartTime`: 
-  * `shotEndTime`:
-  * `First-Name_LAST-NAME`: 
-  * `proofSource`: `ASR`, `OCR` or `Wikipedia`
-  * `proofVideo`:
-  * `proofStartTime`: 
-  * `proofEndTime`:
+  * `shotVideo`: unique identifier of the video
+  * `shotStartTime`: shot start time (in seconds)
+  * `shotEndTime`: shot end time (in seconds)
+  * `First-Name_LAST-NAME`: unique identifier of the person
+  * `confidence`: the higher, the more confident
+  * `proofSource`: `ASR` or `OCR`
+  * `proofVideo`: unique identifier of the proof video
+  * `proofStartTime`: proof start time (in seconds)
+  * `proofEndTime`: proof end time (in seconds)
 
 #### Optional task
 
@@ -72,10 +72,10 @@ In this optional task, participants are asked to provide a temporal segmentation
 ```
 video startTime endTime personLabel
 ```
-  * `video`:
-  * `startTime`: 
-  * `endTime`:
-  * `personLabel`:
+  * `video`: unique identifier of the video
+  * `startTime`: fragment start time
+  * `endTime`: fragment end time
+  * `personLabel`: unique identifier of the person
 
 ### Target group
 
@@ -106,25 +106,48 @@ The REPERE data set (137 hours) will be dividing into two parts: a development s
   * Image (1/10 seconds): face segmentation and identification, overlaid text transcription, mark on person name in overlaid text,
   * Complete face tracking on 10 hours
 
-To complete these annotations for the two first subtasks, a posteriori annotation interface build for the CAMOMILE project will be used.
-
 ### Evaluation methodology
 
 ```
 Describe the evaluation methodology, including how the ground truth will be created.
 ```
 
-On these lists we will make requests (names, dates) depending on the popularity of the people in the Google trends. The query results will allow us to assess the quality of the indexation.
-To evaluate the intrinsic diarization system quality we also propose a third subtask:
+#### Main task
 
-A posteriori shot annotation depending on what is return by participants. Metrics are the classical precision recall and F1-measure. These metrics are compute for each request. The global score corresponding to the mean score
+The main task will be evaluated as an Information Retrieval (IR) task.  
+`TO BE DISCUSSED`: using inferred average precision?
 
-  * P(request/video) = # correct shots / # hypothesis shot
-  * R(request/video) = # correct shots / # shot in the reference
+Requests (*e.g.* `First-Name_LAST-NAME`) will be selected a posteriori (*i.e.* after runs have been submitted) among the list of people returned by participants to the task and the list of people extracted from the part of the test set which is already annotated.
 
-where “#shot in the reference” is not exhaustive, it corresponds to the shot annotated a posteriori. More a participant return good shot, more the task is hard for the other participants.
-For the diarization task, we will use the diarization error rate (DER) classically used in the speech community.
-We will also propose an on line adjudication interface to solve ambiguous cases.
+`TO BE DISCUSSED`: we also plan to use `Google Trends` for a particular person to only evaluate a request on the subset made of the videos whose broadcast date matches the date where the person was actually buzzing.
+
+Ground truth will be created a posteriori by manually checking the top N shots (according to the `confidence` score) returned by each participants for each query. For each shot, both the person name itself (`Relevant`, `Irrelevant`, `Unsure`) and its proof (`Correct` or `Incorrect`) will be evaluated.
+
+  * A shot is `Relevant` if the annotator knows (based on personal knowledge) the name is correct or the proof makes it clear it is correct.  
+  * A shot is `Irrelevant` if the annotator knows (based on personal knowledge) the name is incorrect or the proof makes it clear it is incorrect.  
+  * A shot is `Unsure` if the annotator does not know the person and the proof does not help either.  
+
+  * A proof is `Correct` if it makes it clear the person name is correct.
+  * A proof is `Incorrect` if it does not.
+
+`TO BE DISCUSSED`: we also plan to ask participants to help annotating the corpus through the `CAMOMILE` annotation web-app.
+
+Two variants of precision and recall will be used (taking or not the proof into account) depending on how the number of relevant answers is computed.
+
+```
+VARIANT 1: # relevant = number of relevant shots
+```
+
+```
+VARIANT 2: # relevant = 0.5 x number of relevant shots + 0.5 x number of correct proofs
+```
+
+An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
+
+
+#### Optional task
+
+The optional task will be evaluated on a subset (10 hours) of the test set which is already densely annotated in terms of people speaking AND appearing at the same time. We will use the Diarization Error Rate (DER) classicaly used in the speech community.
 
 
 ### References and recommended reading
@@ -136,44 +159,41 @@ List 3-4 references related to the task that teams should have read before attem
 #### Paper by REPERE challenge 2013 organizers
 
 G. Bernard, O. Galibert, J. Kahn  
-*The First Official REPERE Evaluation*  
+[*The First Official REPERE Evaluation*](http://ceur-ws.org/Vol-1012/papers/paper-08.pdf)  
 SLAM 2013, First Workshop on Speech, Language and Audio for Multimedia  
-[PDF](http://ceur-ws.org/Vol-1012/papers/paper-08.pdf)
 
 #### Paper by REPERE corpus creators
 
 A. Giraudel, M. Carré, V. Mapelli, J. Kahn, O. Galibert, L. Quintard  
-*The REPERE Corpus: a Multimodal Corpus for Person Recognition*  
+[*The REPERE Corpus: a Multimodal Corpus for Person Recognition*](http://www.lrec-conf.org/proceedings/lrec2012/pdf/707_Paper.pdf)  
 LREC 2014, Eight International Conference on Language Resources and Evaluation  
-[PDF](http://www.lrec-conf.org/proceedings/lrec2012/pdf/707_Paper.pdf)
 
 #### Paper by REPERE challenge 2014 winning consortium
 
 F. Bechet, M. Bendris, D. Charlet, G. Damnati, B. Favre, M. Rouvier, R. Auguste, B. Bigot, R. Dufour, C. Fredouille, G. Linarès, J. Martinet, G. Senay, P. Tirilly  
-*Multimodal Understanding for Person Recognition in Video Broadcasts*  
+[*Multimodal Understanding for Person Recognition in Video Broadcasts*](http://pageperso.lif.univ-mrs.fr/~benoit.favre/papers/favre_interspeech2014b.pdf)  
 InterSpeech 2014, Fifteenth Annual Conference of the International Speech Communication Association  
-[PDF](http://pageperso.lif.univ-mrs.fr/~benoit.favre/papers/favre_interspeech2014b.pdf)
 
 #### Papers by the organizers
 
 H. Bredin, A. Laurent, A. Sarkar, V.-B. Le, S. Rosset, C. Barras  
-*Person Instance Graphs for Named Speaker Identification in TV Broadcast*  
+[*Person Instance Graphs for Named Speaker Identification in TV Broadcast*](http://cs.uef.fi/odyssey2014/program/pdfs/27.pdf)  
 Odyssey 2014, The Speaker and Language Recognition Workshop  
-[PDF](http://cs.uef.fi/odyssey2014/program/pdfs/27.pdf)
 
 J. Poignant, L. Besacier, G. Quénot  
-*Unsupervised Speaker Identification in TV Broadcast Based on Written Names*  
+[*Unsupervised Speaker Identification in TV Broadcast Based on Written Names*](https://hal.archives-ouvertes.fr/hal-01060827/document)  
 IEEE/ACM Transactions on Audio, Speech, and Language Processing  
-[PDF](https://hal.archives-ouvertes.fr/hal-01060827/document)
 
 ### List of task organizers
 
   * Johann Poignant (LIMSI/CNRS)
   * Claude Barras (LIMSI/Université Paris-Sud)
   * Hervé Bredin (LIMSI/CNRS)
+  * Gilles Adda (LIMSI/IMMI/CNRS)
   * Juliette Kahn (LNE) ?
   * Sylvain Meignier (LIUM) ?
-  
+  * Georges Quénot (LIG) ?
+
 ## Task blurb
 
 ```
@@ -195,13 +215,6 @@ A mix of experienced and early-career researchers is recommended.
 Note that your task team ￼can add members after the proposal has been accepted.
 ```
 
-  * Johann Poignant, LIMSI, France
-  * Hervé Bredin, LIMSI, France
-  * Claude Barras, LIMSI, France
-  * Juliette Kahn, LNE, France
-  * LIG ???
-
-
 ## Survey questions
 ```
 Write a list of questions (3-5) that you would like to include on the survey. 
@@ -211,7 +224,7 @@ For examples of the types of ￼questions asked by tasks, please have a look at 
 for the MediaEval 2013 survey.
 ```
 
-- What is your opinion about requests selected according to the Google trend.
+- What is your opinion about selecting requests according to Google Trends.
   * Very interested.
   * Not interested
 
@@ -219,16 +232,16 @@ for the MediaEval 2013 survey.
  * Yes
  * No
 
-- The responses to the requests should be on persons:
+- The answers to the requests should be on people:
  * Speaking AND appearing
- * Speaking OR appearing
+ * Speaking AND/OR appearing
 
-- How much data do you needs for the development set (there is no training data, systems should be unsupervised)?
+- How much data do you need for the development set (there is no training data, systems should be unsupervised)?
  * 5 hours
  * 10 hours
  * 20 hours
 
-- How much time can you devote to the post-annotation to increase the number of requests evaluated:
+- How much time can you devote to the post-annotation to increase the number of evaluated requests:
  * 0 hours
  * 25 hours
  * 50 hours
