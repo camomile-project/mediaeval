@@ -1,7 +1,8 @@
 
 TODO list
 
-
-- [ ] vérifier les données disponibles
+- [ ] Finir le proposal
+- [ ] Vérifier les données disponibles
 - [ ] Vérifier les vidéos (avi)
 - [ ] Vérifier le package ELDA
+- [ ] Outils de post-annotation / adjudication
