@@ -19,22 +19,48 @@ State what the task requires of participants.
 
 The REPERE challenge is an evaluation campaign on multimodal person recognition (phase 1 took place in January 2013 and phase 2 in January 2014). The main objective of this challenge is to answer the four following questions at any instant of the video: Who speaks? Who is seen? Whose name is pronounced? Whose name is written on screen? All modalities available (audio, image, external data, etc.) can be used for answering these questions
 
+archivist/journalist ==> needs to be sure of the identity when choosing which picture to use
 
-To extend this challenge we propose a more applicative task. This task is based on a classical framework: return a list of shot where a person is speaking and appearing at the same time. Which we add an original dimension: no a priori knowledge on persons present in these videos. This implies the need to find the identity of person within a modality of the videos. This novelty leads us to the first subtask:
+Different scenarios underlying the task can be proposed to user like archivist or journalist:
+  
+  * Navigate into a video: a user wants to retrieve when a person is present in a video and jump from a video segment to another.
+  * Video search: a user wants to retrieve a set of video where a given person is present.
 
-#### Subtask1: Find a proof of the identities the persons
+#### Main task
 
-A proof can be a shot where we can see the person speaking and his name written on screen, or a sequence where a person speak and appears and with his name is pronounced just before or after.
-From these proofs, the participants are asked to provide a list of shots where people appear and speak at the same time (to force the multi-modality of the process). This is the core of the proposed task:
+Given a collection of TV broadcasts pre-segmented into shots, participants are asked to provide, for each shot, the list of names of persons speaking AND appearing at the same time.
 
-#### Subtask2: unsupervised multimodal person indexing
+The main novelty is that the list of persons is not provided *a priori* and the use of pre-existing biometric models (either from voice or from face) is forbidden. The only way to identify a person is by finding their name in the audio (*e.g.* using automatic speech recognition) or visual (*e.g.* using optical character recognition) streams and associating them to the correct person - making the task completely unsupervised.
 
-On these lists we will make requests (names, dates) depending on the popularity of the people in the Google trends. The query results will allow us to assess the quality of the indexation.
-To evaluate the intrinsic diarization system quality we also propose a third subtask:
+Participants are also asked to provide a proof for every result they return.
+A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be a different shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), the same shot where the person introduces themself (`proofSource = ASR`), or their Wikipedia page (`proofSource = wikipedia`).
 
-#### Subtask3: Multimodal person diarization (AV)
+```
+shotVideo shotStartTime shotEndTime First-Name_LAST-NAME proofSource proofVideo proofStartTime proofEndTime
+shotVideo shotStartTime shotEndTime First-Name_LAST-NAME wikipedia http://wikipedia.org/...
+```
+  * `shotVideo`:
+  * `shotStartTime`: 
+  * `shotEndTime`:
+  * `First-Name_LAST-NAME`: 
+  * `proofSource`: `ASR`, `OCR` or `Wikipedia`
+  * `proofVideo`:
+  * `proofStartTime`: 
+  * `proofEndTime`:
 
-Where the expected results are a multimodal anonymous segmentation with identical tags for face and speech segment of a person.
+#### Optional task
+
+As we expect most submissions to internally rely on two-steps approaches (*i.e.* speaking-face diarization followed by propagation of detected names), an optional task is dedicated to the evaluation of underlying audio-visual diarization technologies.
+
+In this optional task, participants are asked to provide a temporal segmentation of the whole test corpus containing every temporal fragment where at least one person is speaking and appearing at the same time. Moreover, each person should be uniquely identified by an anonymous label (*e.g.* `person1`, `person2`, ...)
+
+```
+video startTime endTime personLabel
+```
+  * `video`:
+  * `startTime`: 
+  * `endTime`:
+  * `personLabel`:
 
 ### Target group
 
@@ -42,10 +68,15 @@ Where the expected results are a multimodal anonymous segmentation with identica
 Describe the type of researchers who would be interested in participating in the task.
 ```
 
-Different scenarios underlying the task can be proposed to user like archivist or journalist:
-  
-  * Navigate into a video: a user wants to retrieve when a person is present in a video and jump from a video segment to another.
-  * Video search: a user wants to retrieve a set of video where a given person is present.
+This task targets researchers from several communities including multimedia, computer vision, speech and natural language processing. Though the task is multimodal by design and necessitates expertise in various domains, the technological barriers to entry is lowered by the fact that the automatic output of various sub-modules will be provided to all participants:
+
+  * speaker diarization,
+  * face detection and tracking,
+  * automatic speech transcription,
+  * optical character recognition,
+  * named entity detection
+
+For instance, a researcher from the speech processing community could focus its research efforts on improving speaker diarization and automatic speech transcription, while still being able to rely on provided face detection and tracking results to participate to the task.
 
 ### Data
 
@@ -68,6 +99,9 @@ To complete these annotations for the two first subtasks, a posteriori annotatio
 Describe the evaluation methodology, including how the ground truth will be created.
 ```
 
+On these lists we will make requests (names, dates) depending on the popularity of the people in the Google trends. The query results will allow us to assess the quality of the indexation.
+To evaluate the intrinsic diarization system quality we also propose a third subtask:
+
 A posteriori shot annotation depending on what is return by participants. Metrics are the classical precision recall and F1-measure. These metrics are compute for each request. The global score corresponding to the mean score
 
   * P(request/video) = # correct shots / # hypothesis shot
@@ -84,18 +118,47 @@ We will also propose an on line adjudication interface to solve ambiguous cases.
 List 3-4 references related to the task that teams should have read before attempting the task.
 ```
 
-  * G. Bernard, O. Galibert, J. Kahn The Second Official REPERE Evaluation SLAM 2014, Second Workshop on Speech, Language and Audio for Multimedia
-  * F. Bechet, M. Bendris, D. Charlet, G. Damnati, B. Favre, M. Rouvier, R. Auguste, B. Bigot, R. Dufour, C. Fredouille, G. Linarès, J. Martinet, G. Senay, P., T. Multimodal understanding for person recognition in video broadcasts InterSpeech 2014, Fifteenth Annual Conference of the International Speech Communication Association
-  * A. G., M. Carré, V. Mapelli, J. Kahn, O. Galibert, L. Quintard, The REPERE Corpus: a multimodal corpus for person recognition. LREC 2012
+#### Paper by REPERE challenge 2013 organizers
+
+G. Bernard, O. Galibert, J. Kahn  
+*The First Official REPERE Evaluation*  
+SLAM 2013, First Workshop on Speech, Language and Audio for Multimedia  
+[PDF](http://ceur-ws.org/Vol-1012/papers/paper-08.pdf)
+
+#### Paper by REPERE corpus creators
+
+A. Giraudel, M. Carré, V. Mapelli, J. Kahn, O. Galibert, L. Quintard  
+*The REPERE Corpus: a Multimodal Corpus for Person Recognition*  
+LREC 2014, Eight International Conference on Language Resources and Evaluation  
+[PDF](http://www.lrec-conf.org/proceedings/lrec2012/pdf/707_Paper.pdf)
+
+#### Paper by REPERE challenge 2014 winning consortium
+
+F. Bechet, M. Bendris, D. Charlet, G. Damnati, B. Favre, M. Rouvier, R. Auguste, B. Bigot, R. Dufour, C. Fredouille, G. Linarès, J. Martinet, G. Senay, P. Tirilly  
+*Multimodal Understanding for Person Recognition in Video Broadcasts*  
+InterSpeech 2014, Fifteenth Annual Conference of the International Speech Communication Association  
+[PDF](http://pageperso.lif.univ-mrs.fr/~benoit.favre/papers/favre_interspeech2014b.pdf)
+
+#### Papers by the organizers
+
+H. Bredin, A. Laurent, A. Sarkar, V.-B. Le, S. Rosset, C. Barras  
+*Person Instance Graphs for Named Speaker Identification in TV Broadcast*  
+Odyssey 2014, The Speaker and Language Recognition Workshop  
+[PDF](http://cs.uef.fi/odyssey2014/program/pdfs/27.pdf)
+
+J. Poignant, L. Besacier, G. Quénot  
+*Unsupervised Speaker Identification in TV Broadcast Based on Written Names*  
+IEEE/ACM Transactions on Audio, Speech, and Language Processing  
+[?](http://)
 
 ### List of task organizers
 
-  * Johann Poignant
-  * Claude Barras
-  * Hervé Bredin 
+  * Johann Poignant (LIMSI/CNRS)
+  * Claude Barras (LIMSI/Université Paris-Sud)
+  * Hervé Bredin (LIMSI/CNRS)
+  * Juliette Kahn (LNE) ?
+  * Sylvain Meignier (LIUM) ?
   
-(firstname.lastname@limsi.fr)
-
 ## Task blurb
 
 ```
