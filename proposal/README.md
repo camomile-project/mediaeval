@@ -119,7 +119,6 @@ Note that your task team ￼can add members after the proposal has been accepted
 ```
 
 ## Survey questions
-
 ```
 Write a list of questions (3-5) that you would like to include on the survey. 
 These questions help you to ascertain the preferences of the research community for the aspects 
@@ -127,3 +126,28 @@ of the design of the task formulation, the data set design, and the evaluation m
 For examples of the types of ￼questions asked by tasks, please have a look at this .pdf
 for the MediaEval 2013 survey.
 ```
+
+- What is your opinion about requests selected according to the Google trend.
+  * Very interested.
+  * Not interested
+
+- Do you think that we should add requests for the anchors and journalists?
+ * Yes
+ * No
+
+- The responses to the requests should be on persons:
+ * Speaking AND appearing
+ * Speaking OR appearing
+
+- How much data do you needs for the development set (there is no training data, systems should be unsupervised)?
+ * 5 hours
+ * 10 hours
+ * 20 hours
+
+- How much time can you devote to the post-annotation to increase the number of requests evaluated:
+ * 0 hours
+ * 25 hours
+ * 50 hours
+ * 75 hours
+ * 100 hours
+
