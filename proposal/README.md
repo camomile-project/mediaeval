@@ -151,3 +151,4 @@ for the MediaEval 2013 survey.
  * 75 hours
  * 100 hours
 
+- If any additional comments, questions or suggestions about this task occurred to you while you were answering the detailed questions, it would be helpful if you could enter them here:
