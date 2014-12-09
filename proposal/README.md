@@ -11,9 +11,9 @@ Give your task an informative title.
 Multimodal person discovery in TV Broadcast
 
 ```
-Unsupervised  | Person | Discovery | in TV Broadcast
-Multi-modal   |        | Spotting  | 
-Cross-modal   |        | Naming
+Proove it: Unsupervised Person Discovery in TV Broadcast
+Buzzinga!  Multi-modal  ______ Spotting  _______________  
+           Cross-modal  ______ Naming    _______________
 ```
 
 ### Introduction
@@ -23,14 +23,21 @@ Describe the motivating use scenario, i.e,. which application(s) motivate the ta
 State what the task requires of participants.
 ```
 
-The REPERE challenge is an evaluation campaign on multimodal person recognition (phase 1 took place in January 2013 and phase 2 in January 2014). The main objective of this challenge is to answer the four following questions at any instant of the video: Who speaks? Who is seen? Whose name is pronounced? Whose name is written on screen? All modalities available (audio, image, external data, etc.) can be used for answering these questions
+This task is trying to re-imagine the (now completed) REPERE challenge, which focused on multimodal person recognition in TV broadcast. 
+The main objective of this challenge was to answer the two questions **who speaks when?** and **who appears when?** using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts).
 
-archivist/journalist ==> needs to be sure of the identity when choosing which picture to use
+TV archives maintained by national institutions such as French INA, Dutch Sound&Vison or the BBC are getting bigger everyday.
+Automatically creating indexes to make those archives searchable may lead to lots of potentially very useful applications.
 
-Different scenarios underlying the task can be proposed to user like archivist or journalist:
-  
-  * Navigate into a video: a user wants to retrieve when a person is present in a video and jump from a video segment to another.
-  * Video search: a user wants to retrieve a set of video where a given person is present.
+One of the most promising indexes is **people**. People are interested in people by nature. 
+One day or another, anyone may start buzzing and become a trending topic on social networks or search engines.
+It is however impossible to predict who is going to buzz and who isn't, making it difficult to generate a list of person of interests in advance.
+
+Therefore, biometric models for some people may not be available at indexing time, simply because they are not (yet) famous.
+Even worse, archivist human annotators may not even know their name! 
+
+Hence, unsupervised algorithms (*i.e.* not relying on any biometric models) are needed.
+To ensure high quality indexes, those algorithms should also help human annotators double-check these indexes by providing a proof of the claimed identity (especially for people that are not yet famous).
 
 #### Main task
 
