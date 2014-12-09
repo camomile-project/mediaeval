@@ -32,6 +32,8 @@ Given a collection of TV broadcasts pre-segmented into shots, participants are a
 
 The main novelty is that the list of persons is not provided *a priori* and the use of pre-existing biometric models (either from voice or from face) is forbidden. The only way to identify a person is by finding their name in the audio (*e.g.* using automatic speech recognition) or visual (*e.g.* using optical character recognition) streams and associating them to the correct person - making the task completely unsupervised.
 
+![Propagation](propagation.png)
+
 Participants are also asked to provide a proof for every result they return.
 A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be a different shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), the same shot where the person introduces themself (`proofSource = ASR`), or their Wikipedia page (`proofSource = wikipedia`).
 
@@ -181,7 +183,6 @@ Note that your task team ￼can add members after the proposal has been accepted
 ```
 
 ## Survey questions
-
 ```
 Write a list of questions (3-5) that you would like to include on the survey. 
 These questions help you to ascertain the preferences of the research community for the aspects 
@@ -189,3 +190,29 @@ of the design of the task formulation, the data set design, and the evaluation m
 For examples of the types of ￼questions asked by tasks, please have a look at this .pdf
 for the MediaEval 2013 survey.
 ```
+
+- What is your opinion about requests selected according to the Google trend.
+  * Very interested.
+  * Not interested
+
+- Do you think that we should add requests for the anchors and journalists?
+ * Yes
+ * No
+
+- The responses to the requests should be on persons:
+ * Speaking AND appearing
+ * Speaking OR appearing
+
+- How much data do you needs for the development set (there is no training data, systems should be unsupervised)?
+ * 5 hours
+ * 10 hours
+ * 20 hours
+
+- How much time can you devote to the post-annotation to increase the number of requests evaluated:
+ * 0 hours
+ * 25 hours
+ * 50 hours
+ * 75 hours
+ * 100 hours
+
+- If any additional comments, questions or suggestions about this task occurred to you while you were answering the detailed questions, it would be helpful if you could enter them here:
