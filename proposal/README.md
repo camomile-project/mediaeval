@@ -241,28 +241,37 @@ For examples of the types of ￼questions asked by tasks, please have a look at 
 for the MediaEval 2013 survey.
 ```
 
-- What is your opinion about selecting requests according to Google Trends.
-  * Very interested
-  * Not interested
+- Keeping in mind that baseline monomodal modules will be provided (e.g. speaker diarization, face detection and tracking), what category of people should the task be evaluated on:  
+ * audible people (I am only interested in audio processing)
+ * visible people (I am only interested in video processing)
+ * people either audible or visible
+ * people both audible and visible (the task should be about the "multi" in "multimedia")
 
-- Do you think that we should add requests for the anchors and journalists?
- * Yes
- * No
+- Keeping in mind that your algorithm must not rely on prior biometric models, what should be the size of the development set for parameter tuning?
+ * I don't need any development set.
+ * 5 hours.
+ * 10 hours.
+ * 20 hours.
 
-- The answers to the requests should be on people:
- * Speaking AND appearing
- * Speaking AND/OR appearing
+- Would you be interested in submitting contrastive runs using supervised person identification algorithms?
+ * yes
+ * no
 
-- How much data do you need for the development set (there is no training data, systems should be unsupervised)?
- * 5 hours
- * 10 hours
- * 20 hours
+- Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of only annotating videos with people that were actually buzzing (e.g. according to Google Trends) when the video was aired?
+ * it is a good idea
+ * I'd rather annotate less videos but more people
+ * I'd rather annotate less people but more videos
+ * I have a better idea: ...........................................
 
-- How much time can you devote to the post-annotation to increase the number of evaluated requests:
- * 0 hours
- * 25 hours
- * 50 hours
- * 75 hours
- * 100 hours
+- Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of NOT annotating recurring TV anchors and journalists?
+ * I agree: there is no need to annotate anchors and journalists
+ * I disagree.
+
+- How much time can you (or your team) devote to the a posteriori collaborative annotation?
+ * None
+ * 1 day
+ * 2 days
+ * a week
+ * I annotate for fun - keep them coming!
 
 - If any additional comments, questions or suggestions about this task occurred to you while you were answering the detailed questions, it would be helpful if you could enter them here:
