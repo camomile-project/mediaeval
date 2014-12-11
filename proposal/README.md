@@ -218,6 +218,10 @@ Second sentence: What is the data?
 Third sentence: How is the ￼task evaluated?
 ```
 
+Given raw TV broadcasts, each shot must be automatically tagged with the name of people both audible and visible.
+The list of people is not known a priori and their names must be discovered in an unsupervised way from text overlay or speech transcripts.
+The task will be evaluated on the extended REPERE corpus using standard information retrieval metrics based on a posteriori collaborative annotation of the corpus.
+
 ## Task organization team
 
 ```
@@ -238,7 +242,7 @@ for the MediaEval 2013 survey.
 ```
 
 - What is your opinion about selecting requests according to Google Trends.
-  * Very interested.
+  * Very interested
   * Not interested
 
 - Do you think that we should add requests for the anchors and journalists?
