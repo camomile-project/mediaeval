@@ -16,4 +16,4 @@ TODO list
 - [ ] Segmentation en plan
 - [ ] Diarization des locuteurs
 - [ ] Diarization des visages (détection, tracking, flandmark, alignement, HoG)
-- 
+
