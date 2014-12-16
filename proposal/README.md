@@ -115,14 +115,11 @@ Describe the evaluation methodology, including how the ground truth will be crea
 
 #### Main task
 
-The main task will be evaluated as an Information Retrieval (IR) task.  
-`TO BE DISCUSSED`: using inferred average precision?
+The main task will be evaluated using standard Information Retrieval (IR) metrics.
 
-Requests (*e.g.* `First-Name_LAST-NAME`) will be selected a posteriori (*i.e.* after runs have been submitted) among the list of people returned by participants to the task and the list of people extracted from the part of the test set which is already annotated.
+Requests (*e.g.* `Barack_OBAMA`) will be selected a posteriori (*i.e.* after runs have been submitted) among the union of list of people returned by participants and the list of people extracted from the pre-annotated part of the test set.
 
-`TO BE DISCUSSED`: we also plan to use `Google Trends` for a particular person to only evaluate a request on the subset made of the videos whose broadcast date matches the date where the person was actually buzzing.
-
-Ground truth will be created a posteriori by manually checking the top N shots (according to the `confidence` score) returned by each participants for each query. For each shot, both the person name itself (`Relevant`, `Irrelevant`, `Unsure`) and its proof (`Correct` or `Incorrect`) will be evaluated.
+Groundtruth will be created a posteriori by manually checking the top N shots (according to the `confidence` score) returned by each participants for each query. For each shot, both the person name itself (`Relevant`, `Irrelevant`, `Unsure`) and its proof (`Correct` or `Incorrect`) will be evaluated.
 
   * A shot is `Relevant` if the annotator knows (based on personal knowledge) the name is correct or the proof makes it clear it is correct.
   * A shot is `Irrelevant` if the annotator knows (based on personal knowledge) the name is incorrect or the proof makes it clear it is incorrect.
@@ -130,34 +127,15 @@ Ground truth will be created a posteriori by manually checking the top N shots (
   * A proof is `Correct` if it makes it clear the person name is correct.
   * A proof is `Incorrect` if it does not.
 
-`TO BE DISCUSSED`: we also plan to ask participants to help annotating the corpus through the `CAMOMILE` annotation web-app.
-
-Two variants of precision and recall will be used (taking or not the proof into account) depending on how the number of relevant answers is computed.
+In order to encourage participants to provide correct proofs, the main evaluation metrics will incorporate their correctness in the following way (where the value of `A` is not yet decided):
 
 ```
-VARIANT 1: # relevant = number of relevant shots
+#{relevant documents}  = A x #{relevant shots} + (1 - A) x #{correct proofs}
 ```
 
-```
-VARIANT 2: # relevant = 0.5 x number of relevant shots + 0.5 x number of correct proofs
-```
-
-The recall will be not exhaustive (the whole corpus can't be annotated completely). It depending on the number of shots annoted a posteriori. The number of shots to return is limited to N shots (N will be decided based on the annotations that we could do).
-
-For example, if N equal 30:
-
-1st case: There is more than 30 shots annotated during the post-eval
- - p1 returns 25 shots with 21 corrects (precision = 21/25)
- - p1 returns 30 shots with 27 corrects (precision = 27/30)
- - 41 shots are annotated during the post-eval with 37 corrects: recall_P1 = 25/30, recall_P2 = 27/30
-
-2st case: There is less than 30 shots annotated during the post-eval
- - p1 returns 5 shots with 4 corrects (precision = 4/5)
- - p1 returns 12 shots with 8 corrects  (precision = 8/12)
- - 15 shots are annotated during the post-eval with 9 corrects: recall_P1 = 4/9, recall_P2 = 8/9
+To reduce the cost of *a posteriori* annotation of the test set, we plan to ask participants to help annotating the corpus through the annotation webapp currently being developed and tested within the `CAMOMILE` project. We might also rely on peaks in `Google Trends` to only annotate a person for TV shows whose broadcast date matches peaks dates (i.e. only annotate people when they are actually buzzing).
 
 An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
-
 
 #### Optional task
 
