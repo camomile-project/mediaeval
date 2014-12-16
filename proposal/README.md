@@ -178,13 +178,13 @@ IEEE/ACM Transactions on Audio, Speech, and Language Processing
 
 ### List of task organizers
 
-  * Johann Poignant (LIMSI/CNRS)
-  * Claude Barras (LIMSI/Université Paris-Sud)
-  * Hervé Bredin (LIMSI/CNRS)
-  * Gilles Adda (LIMSI/IMMI/CNRS)
-  * Juliette Kahn (LNE) ?
-  * Sylvain Meignier (LIUM) ?
-  * Georges Quénot (LIG) ?
+  * Johann Poignant (postdoctoral researcher, LIMSI/CNRS)
+  * Hervé Bredin (associate scientist, LIMSI/CNRS)
+  * Claude Barras (associate professor, LIMSI/Université Paris-Sud)
+  * TO BE CONFIRMED: Félicien Vallet (research engineer, INA)
+  * TO BE CONFIRMED: Jean Carrive (head of research department, INA) 
+  * TO BE CONFIRMED: Juliette Kahn (evaluation engineer, LNE)
+
 
 ## Task blurb
 
