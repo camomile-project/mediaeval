@@ -4,17 +4,21 @@
 
 ### Task title
 
+<!--
 ```
 Give your task an informative title.
 ```
+-->
 
-Multimodal person discovery in TV Broadcast
+CAMOMILE: Multimodal person discovery in TV Broadcast
 
+<!--
 ```
 Proove it: Unsupervised Person Discovery in TV Broadcast
 Buzzinga!  Multi-modal  ______ Spotting  _______________  
            Cross-modal  ______ Naming    _______________
 ```
+-->
 
 ### Introduction
 
