@@ -48,7 +48,7 @@ The main novelty is that the list of persons is not provided *a priori* and the 
 ![Propagation](propagation.png)
 
 Participants are also asked to provide a proof for every result they return.
-A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be a different shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), or the same shot where the person introduces themself (`proofSource = ASR`).
+A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be (but is not limited to) another shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), or the shot itself where the person introduces themself (`proofSource = ASR`). 
 
 ```
 shotVideo shotStartTime shotEndTime First-Name_LAST-NAME confidence proofSource proofVideo proofStartTime proofEndTime
