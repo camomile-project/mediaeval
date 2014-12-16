@@ -99,12 +99,13 @@ For instance, a researcher from the speech processing community could focus its 
 Describe the data set, including how the data will be collected an licensed.
 ```
 
-The REPERE data set (137 hours) will be dividing into two parts: a development set used to tune the fusion system and a test set. We split the corpus to have the minimum overlap between persons present in the two subsets, which will avoid the use of biometric models.
-50 hours are already manually annotated:
+The REPERE dataset (distributed by ELDA) contains 137 hours of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed freely by ELDA (Evaluation and Language resources Distribution Agency). Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
 
-  * Audio: speech transcript, named entities, speech segmentation, speech identification
-  * Image (1/10 seconds): face segmentation and identification, overlaid text transcription, mark on person name in overlaid text,
-  * Complete face tracking on 10 hours
+The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. The transcription follows the general guideline generated within the TC-STAR project for European Parliament Plenary Sessions but was extended to include additional information as the language, background condition, silence/voice segmentation, speaker segmentation and acoustic events. The transcriptions have four layers. Transcriptions follow the TRS format produced by the Transcriber transcribing tool.
+
+We are currently in discussion with INA to augment the REPERE dataset with 50+ hours of TV shows from additional TV channels, matching the broadcast dates of the original REPERE dataset.
+
+We are also in discussion (through Turkish partners of the CAMOMILE project) with Digiturk to add TV shows in a third language (*i.e.* Turkish).
 
 ### Evaluation methodology
 
