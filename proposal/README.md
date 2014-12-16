@@ -199,7 +199,6 @@ IEEE/ACM Transactions on Audio, Speech, and Language Processing
   * TO BE CONFIRMED: Jean Carrive (head of research department, INA) 
   * TO BE CONFIRMED: Juliette Kahn (evaluation engineer, LNE)
 
-
 ## Task blurb
 
 <!--
@@ -214,8 +213,8 @@ Third sentence: How is the ￼task evaluated?
 -->
 
 Given raw TV broadcasts, each shot must be automatically tagged with the name of people both audible and visible.
-The list of people is not known a priori and their names must be discovered in an unsupervised way from text overlay or speech transcripts.
-The task will be evaluated on the extended REPERE corpus using standard information retrieval metrics based on a posteriori collaborative annotation of the corpus.
+The list of people is not known *a priori* and their names must be discovered in an unsupervised way from text overlay or speech transcripts.
+The task will be evaluated on the extended REPERE corpus using standard information retrieval metrics based on *a posteriori* collaborative annotation of the corpus.
 
 ## Task organization team
 
