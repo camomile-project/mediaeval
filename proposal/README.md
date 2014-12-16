@@ -22,10 +22,12 @@ Buzzinga!  Multi-modal  ______ Spotting  _______________
 
 ### Introduction
 
+<!--
 ```
 Describe the motivating use scenario, i.e,. which application(s) motivate the task. 
 State what the task requires of participants.
 ```
+-->
 
 This task is trying to re-imagine the (now completed) REPERE challenge, which focused on multimodal person recognition in TV broadcast. 
 The main objective of this challenge was to answer the two questions **who speaks when?** and **who appears when?** using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts).
@@ -83,9 +85,11 @@ video startTime endTime personLabel
 
 ### Target group
 
+<!--
 ```
 Describe the type of researchers who would be interested in participating in the task.
 ```
+-->
 
 This task targets researchers from several communities including multimedia, computer vision, speech and natural language processing. Though the task is multimodal by design and necessitates expertise in various domains, the technological barriers to entry is lowered by the fact that the automatic output of various sub-modules will be provided to all participants:
 
@@ -99,9 +103,11 @@ For instance, a researcher from the speech processing community could focus its 
 
 ### Data
 
+<!--
 ```
 Describe the data set, including how the data will be collected an licensed.
 ```
+-->
 
 The REPERE dataset (distributed by ELDA) contains 137 hours of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed freely by ELDA (Evaluation and Language resources Distribution Agency). Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
 
@@ -113,9 +119,11 @@ We are also in discussion (through Turkish partners of the CAMOMILE project) wit
 
 ### Evaluation methodology
 
+<!--
 ```
 Describe the evaluation methodology, including how the ground truth will be created.
 ```
+-->
 
 #### Main task
 
@@ -148,9 +156,11 @@ The optional task will be evaluated on a subset (10 hours) of the test set which
 
 ### References and recommended reading
 
+<!--
 ```
 List 3-4 references related to the task that teams should have read before attempting the task.
 ```
+-->
 
 #### Paper by REPERE challenge 2013 organizers
 
@@ -192,6 +202,7 @@ IEEE/ACM Transactions on Audio, Speech, and Language Processing
 
 ## Task blurb
 
+<!--
 ```
 ￼Write 2-3 sentences that summarizes key information on the task.
 It should be informative and well- crafted to attract potential participants. 
@@ -200,6 +211,7 @@ First sentence: What is the input and the output of the algorithm that participa
 Second sentence: What is the data? 
 Third sentence: How is the ￼task evaluated?
 ```
+-->
 
 Given raw TV broadcasts, each shot must be automatically tagged with the name of people both audible and visible.
 The list of people is not known a priori and their names must be discovered in an unsupervised way from text overlay or speech transcripts.
@@ -215,7 +227,11 @@ A mix of experienced and early-career researchers is recommended.
 Note that your task team ￼can add members after the proposal has been accepted.
 ```
 
+
+
 ## Survey questions
+
+<!--
 ```
 Write a list of questions (3-5) that you would like to include on the survey. 
 These questions help you to ascertain the preferences of the research community for the aspects 
@@ -223,6 +239,7 @@ of the design of the task formulation, the data set design, and the evaluation m
 For examples of the types of ￼questions asked by tasks, please have a look at this .pdf
 for the MediaEval 2013 survey.
 ```
+-->
 
 - Keeping in mind that baseline monomodal modules will be provided (e.g. speaker diarization, face detection and tracking), what category of people should the task be evaluated on:  
  * audible people (I am only interested in audio processing)
