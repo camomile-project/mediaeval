@@ -139,10 +139,10 @@ Groundtruth will be created a posteriori by manually checking the top N shots (a
   * A proof is `Correct` if it makes it clear the person name is correct.
   * A proof is `Incorrect` if it does not.
 
-In order to encourage participants to provide correct proofs, the main evaluation metrics will incorporate their correctness in the following way (where the value of `A` is not yet decided):
+In order to encourage participants to provide correct proofs, the main evaluation metrics will incorporate their correctness in the following way (where the value of `α` is not yet decided):
 
 ```
-#{relevant documents}  = A x #{relevant shots} + (1 - A) x #{correct proofs}
+#{relevant documents}  = α . #{relevant shots} + (1 - α) . #{correct proofs}
 ```
 
 To reduce the cost of *a posteriori* annotation of the test set, we plan to ask participants to help annotating the corpus through the annotation webapp currently being developed and tested within the `CAMOMILE` project. We might also rely on peaks in `Google Trends` to only annotate a person for TV shows whose broadcast date matches peaks dates (i.e. only annotate people when they are actually buzzing).
