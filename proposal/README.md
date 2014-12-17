@@ -225,6 +225,11 @@ Teams should consists of members from multiple research sites and multiple proje
 A mix of experienced and early-career researchers is recommended. 
 Note that your task team ￼can add members after the proposal has been accepted.
 ```
+The Computer Science Laboratory for Mechanics and Engineering Sciences (LIMSI) participated as team leader of the QCOMPERE consortium for the REPERE challenge. In the context of the CAMOMILE project (Collaborative Annotation of multi-modal, multi-Lingual and Multi-media documents) it will organize the evaluation and the post-annotation for this new task.
+
+The National Laboratory of Metrology and Testing (LNE) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds. LNE was responsible of the evaluation of the REPERE challenge. It have an advisory role on the evaluation protocol. (to be confirmed)
+
+The French for National Audiovisual Institute (INA) is a repository of all French radio and television audiovisual archives. It have an advisory role with a point of view of an archist (to be confirmed)
 
 
 
