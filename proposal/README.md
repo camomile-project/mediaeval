@@ -151,7 +151,7 @@ An online adjudication interface will be opened after the first round of evaluat
 
 #### Optional task
 
-The optional task will be evaluated on a subset (10 hours) of the test set which is already densely annotated in terms of people speaking AND appearing at the same time. We will use the Diarization Error Rate (DER) classicaly used in the speech community.
+The optional task will be evaluated on a subset (10 hours) of the REEPRE test set which is already densely annotated in terms of people speaking AND appearing at the same time. We will use the Diarization Error Rate (DER) classicaly used in the speech community.
 
 
 ### References and recommended reading
