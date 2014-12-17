@@ -226,20 +226,11 @@ The task will be evaluated on the extended REPERE corpus using standard informat
 
 ## Task organization team
 
-```
-Write a short paragraph describing the organizing team. 
-Your team should be large enough to handle organizing the task. 
-Teams should consists of members from multiple research sites and multiple projects. 
-A mix of experienced and early-career researchers is recommended. 
-Note that your task team ￼can add members after the proposal has been accepted.
-```
-The Computer Science Laboratory for Mechanics and Engineering Sciences (LIMSI) participated as team leader of the QCOMPERE consortium for the REPERE challenge. In the context of the CAMOMILE project (Collaborative Annotation of multi-modal, multi-Lingual and Multi-media documents) it will organize the evaluation and the post-annotation for this new task.
+The Laboratoire d'Informatique pour la Mécanique et les Sciences de l'Ingénieur (LIMSI, French for Computer Science Laboratory for Mechanics and Engineering Sciences) is a CNRS laboratory with strong experience in evaluation campaigns as a participant (NIST SRE, NIST TRECVid, REPERE) and metadata provider (NIST TRECVid, MediaEval). LIMSI is currently coordinating the CAMOMILE project (Collaborative Annotation of multi-MOdal, MultI-Lingual and multi-mEdia documents) whose collaborative annotation framework will facilitate the organisation of the proposed task.
 
-The National Laboratory of Metrology and Testing (LNE) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds. LNE was responsible of the evaluation of the REPERE challenge. It have an advisory role on the evaluation protocol. (to be confirmed)
+The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (e.g. protocols or metrics)
 
-The French for National Audiovisual Institute (INA) is a repository of all French radio and television audiovisual archives. It have an advisory role with a point of view of an archist (to be confirmed)
-
-
+The Institut National de l'Audiovisuel (INA, French for National Audiovisual Institute) is a repository of all French radio and television audiovisual archives. It will serve both as a content provider and advise the core organization team from an archivist point of view. 
 
 ## Survey questions
 
