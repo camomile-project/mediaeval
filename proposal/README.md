@@ -166,36 +166,36 @@ List 3-4 references related to the task that teams should have read before attem
 #### Paper by REPERE challenge 2013 organizers
  -->
 
-G. Bernard, O. Galibert, J. Kahn  
 [*The First Official REPERE Evaluation*](http://ceur-ws.org/Vol-1012/papers/paper-08.pdf)  
+G. Bernard, O. Galibert, J. Kahn  
 SLAM 2013, First Workshop on Speech, Language and Audio for Multimedia  
 
 <!-- 
 #### Paper by REPERE corpus creators
  -->
 
-A. Giraudel, M. Carré, V. Mapelli, J. Kahn, O. Galibert, L. Quintard  
 [*The REPERE Corpus: a Multimodal Corpus for Person Recognition*](http://www.lrec-conf.org/proceedings/lrec2012/pdf/707_Paper.pdf)  
+A. Giraudel, M. Carré, V. Mapelli, J. Kahn, O. Galibert, L. Quintard  
 LREC 2014, Eight International Conference on Language Resources and Evaluation  
 
 <!-- 
 #### Paper by REPERE challenge 2014 winning consortium
  -->
 
-F. Bechet, M. Bendris, D. Charlet, G. Damnati, B. Favre, M. Rouvier, R. Auguste, B. Bigot, R. Dufour, C. Fredouille, G. Linarès, J. Martinet, G. Senay, P. Tirilly  
 [*Multimodal Understanding for Person Recognition in Video Broadcasts*](http://pageperso.lif.univ-mrs.fr/~benoit.favre/papers/favre_interspeech2014b.pdf)  
+F. Bechet, M. Bendris, D. Charlet, G. Damnati, B. Favre, M. Rouvier, R. Auguste, B. Bigot, R. Dufour, C. Fredouille, G. Linarès, J. Martinet, G. Senay, P. Tirilly  
 InterSpeech 2014, Fifteenth Annual Conference of the International Speech Communication Association  
 
 <!-- 
 #### Papers by the organizers
  -->
 
-H. Bredin, A. Laurent, A. Sarkar, V.-B. Le, S. Rosset, C. Barras  
 [*Person Instance Graphs for Named Speaker Identification in TV Broadcast*](http://cs.uef.fi/odyssey2014/program/pdfs/27.pdf)  
+H. Bredin, A. Laurent, A. Sarkar, V.-B. Le, S. Rosset, C. Barras  
 Odyssey 2014, The Speaker and Language Recognition Workshop  
 
-J. Poignant, L. Besacier, G. Quénot  
 [*Unsupervised Speaker Identification in TV Broadcast Based on Written Names*](https://hal.archives-ouvertes.fr/hal-01060827/document)  
+J. Poignant, L. Besacier, G. Quénot  
 IEEE/ACM Transactions on Audio, Speech, and Language Processing  
 
 ### List of task organizers
@@ -245,36 +245,36 @@ for the MediaEval 2013 survey.
 -->
 
 - Keeping in mind that baseline monomodal modules will be provided (*e.g.* speaker diarization, face detection and tracking), what category of people should the task be evaluated on:  
- * audible people (I am only interested in audio processing)
- * visible people (I am only interested in video processing)
- * people either audible or visible
- * people both audible and visible (the task should be about the "multi" in "multimedia")
+   * audible people (I am only interested in audio processing)
+   * visible people (I am only interested in video processing)
+   * people either audible or visible
+   * people both audible and visible (the task should be about the "multi" in "multimedia")
 
 - Keeping in mind that your algorithm must not rely on prior biometric models, what should be the size of the development set for parameter tuning?
- * I don't need any development set.
- * 5 hours.
- * 10 hours.
- * 20 hours.
+   * I don't need any development set.
+   * 5 hours.
+   * 10 hours.
+   * 20 hours.
 
 - Would you be interested in submitting contrastive runs using supervised person identification algorithms?
- * yes
- * no
+   * yes
+   * no
 
 - Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of only annotating videos with people that were actually buzzing (*e.g.* according to Google Trends) when the video was aired?
- * it is a good idea
- * I'd rather annotate less videos but more people
- * I'd rather annotate less people but more videos
- * I have a better idea: ...........................................
+   * it is a good idea
+   * I'd rather annotate less videos but more people
+   * I'd rather annotate less people but more videos
+   * I have a better idea: ...........................................
 
 - Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of NOT annotating recurring TV anchors and journalists?
- * I agree: there is no need to annotate anchors and journalists
- * I disagree.
+   * I agree: there is no need to annotate anchors and journalists
+   * I disagree.
 
 - How much time can you (or your team) devote to the a posteriori collaborative annotation?
- * None
- * 1 day
- * 2 days
- * a week
- * I annotate for fun - keep them coming!
+   * None
+   * 1 day
+   * 2 days
+   * a week
+   * I annotate for fun - keep them coming!
 
 - If any additional comments, questions or suggestions about this task occurred to you while you were answering the detailed questions, it would be helpful if you could enter them here:
