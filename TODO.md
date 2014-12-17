@@ -7,16 +7,16 @@
 - [ ] Outils de post-annotation / adjudication -> jeu ?
 
 #### Jeux pour la post annotation
-- Trouver tous les images d'une personne dans une pêle-mêle :
+- Trouver tous les images d'une personne dans un pêle-mêle :
   * On montre un exemple d'image + le nom associé (prealablement vérifié)
   * On affiche un pêle-mêle d'image 
   * L'utilisateur doit sélectionner le plus vite (???) possible les images de la personnes cible
-  * Pour les images 
+  * Pour les images non sélectionnées mais faisant partie de l'hypothèse d'un participant -> adjudication
 - Blind test visuel: retrouver le nom d'une personne apparaissant dans une image le plus vite possible sans ce tromper
 - Puzzle: 
-  * On affiche un pêle-mêle d'images avec les preuves (dejà vérifier) + des hypothèses
+  * On affiche un pêle-mêle d'images avec les preuves (dejà vérifiées) + des hypothèses
   * On demande à l'utilisateur de regrouper les images de la même personnes dans un sac
-  * On nomme les sacs par le nom de la/les preuves qu'il y a dedans -> si 2 preuves de personnes differentes : adjudication
+  * On nomme les sacs par le nom de la/les preuves qu'il y a dedans -> si 2 preuves de personnes differentes dans un sac : adjudication
 - Récompense lors du workshop Mediaeval pour les meilleurs annotateurs
 
 ## Corpus REPERE
