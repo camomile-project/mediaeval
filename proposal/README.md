@@ -30,12 +30,12 @@ State what the task requires of participants.
 -->
 
 This task is trying to re-imagine the (now completed) REPERE challenge, which focused on multimodal person recognition in TV broadcast. 
-The main objective of this challenge was to answer the two questions **who speaks when?** and **who appears when?** using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts).
+The main objective of this challenge was to answer the two questions *who speaks when?* and *who appears when?* using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts).
 
 TV archives maintained by national institutions such as French INA, Dutch Sound&Vison or the BBC are getting bigger everyday.
 Automatically creating indexes to make those archives searchable may lead to lots of potentially very useful applications.
 
-One of the most promising indexes is **people**. People are interested in people by nature. 
+One of the most promising indexes is *people*. People are interested in people by nature. 
 One day or another, anyone may start buzzing and become a trending topic on social networks or search engines.
 It is however impossible to predict who is going to buzz and who isn't, making it difficult to generate a list of person of interests in advance.
 
@@ -145,7 +145,7 @@ In order to encourage participants to provide correct proofs, the main evaluatio
 #{relevant documents}  = α . #{relevant shots} + (1 - α) . #{correct proofs}
 ```
 
-To reduce the cost of *a posteriori* annotation of the test set, we plan to ask participants to help annotating the corpus through the annotation webapp currently being developed and tested within the `CAMOMILE` project. We might also rely on peaks in `Google Trends` to only annotate a person for TV shows whose broadcast date matches peaks dates (i.e. only annotate people when they are actually buzzing).
+To reduce the cost of *a posteriori* annotation of the test set, we plan to ask participants to help annotating the corpus through the annotation webapp currently being developed and tested within the *CAMOMILE* project. We might also rely on peaks in *Google Trends* to only annotate a person for TV shows whose broadcast date matches peaks dates (*i.e.* only annotate people when they are actually buzzing).
 
 An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
 
@@ -228,7 +228,7 @@ The task will be evaluated on the extended REPERE corpus using standard informat
 
 The Laboratoire d'Informatique pour la Mécanique et les Sciences de l'Ingénieur (LIMSI, French for Computer Science Laboratory for Mechanics and Engineering Sciences) is a CNRS laboratory with strong experience in evaluation campaigns as a participant (NIST SRE, NIST TRECVid, REPERE) and metadata provider (NIST TRECVid, MediaEval). LIMSI is currently coordinating the CAMOMILE project (Collaborative Annotation of multi-MOdal, MultI-Lingual and multi-mEdia documents) whose collaborative annotation framework will facilitate the organisation of the proposed task.
 
-The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (e.g. protocols or metrics)
+The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (*e.g.* protocols or metrics)
 
 The Institut National de l'Audiovisuel (INA, French for National Audiovisual Institute) is a repository of all French radio and television audiovisual archives. It will serve both as a content provider and advise the core organization team from an archivist point of view. 
 
@@ -244,7 +244,7 @@ for the MediaEval 2013 survey.
 ```
 -->
 
-- Keeping in mind that baseline monomodal modules will be provided (e.g. speaker diarization, face detection and tracking), what category of people should the task be evaluated on:  
+- Keeping in mind that baseline monomodal modules will be provided (*e.g.* speaker diarization, face detection and tracking), what category of people should the task be evaluated on:  
  * audible people (I am only interested in audio processing)
  * visible people (I am only interested in video processing)
  * people either audible or visible
@@ -260,7 +260,7 @@ for the MediaEval 2013 survey.
  * yes
  * no
 
-- Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of only annotating videos with people that were actually buzzing (e.g. according to Google Trends) when the video was aired?
+- Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of only annotating videos with people that were actually buzzing (*e.g.* according to Google Trends) when the video was aired?
  * it is a good idea
  * I'd rather annotate less videos but more people
  * I'd rather annotate less people but more videos
