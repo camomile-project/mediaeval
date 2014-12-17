@@ -228,9 +228,9 @@ The task will be evaluated on the extended REPERE corpus using standard informat
 
 The Laboratoire d'Informatique pour la Mécanique et les Sciences de l'Ingénieur (LIMSI, French for Computer Science Laboratory for Mechanics and Engineering Sciences) is a CNRS laboratory with strong experience in evaluation campaigns as a participant (NIST SRE, NIST TRECVid, REPERE) and metadata provider (NIST TRECVid, MediaEval). LIMSI is currently coordinating the CAMOMILE project (Collaborative Annotation of multi-MOdal, MultI-Lingual and multi-mEdia documents) whose collaborative annotation framework will facilitate the organisation of the proposed task.
 
-The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (*e.g.* protocols or metrics)
+TO BE CONFIRMED: The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (*e.g.* protocols or metrics)
 
-The Institut National de l'Audiovisuel (INA, French for National Audiovisual Institute) is a repository of all French radio and television audiovisual archives. It will serve both as a content provider and advise the core organization team from an archivist point of view. 
+TO BE CONFIRMED: The Institut National de l'Audiovisuel (INA, French for National Audiovisual Institute) is a repository of all French radio and television audiovisual archives. It will serve both as a content provider and advise the core organization team from an archivist point of view. 
 
 ## Survey questions
 
