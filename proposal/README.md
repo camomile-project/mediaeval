@@ -162,25 +162,33 @@ List 3-4 references related to the task that teams should have read before attem
 ```
 -->
 
+<!-- 
 #### Paper by REPERE challenge 2013 organizers
+ -->
 
 G. Bernard, O. Galibert, J. Kahn  
 [*The First Official REPERE Evaluation*](http://ceur-ws.org/Vol-1012/papers/paper-08.pdf)  
 SLAM 2013, First Workshop on Speech, Language and Audio for Multimedia  
 
+<!-- 
 #### Paper by REPERE corpus creators
+ -->
 
 A. Giraudel, M. Carré, V. Mapelli, J. Kahn, O. Galibert, L. Quintard  
 [*The REPERE Corpus: a Multimodal Corpus for Person Recognition*](http://www.lrec-conf.org/proceedings/lrec2012/pdf/707_Paper.pdf)  
 LREC 2014, Eight International Conference on Language Resources and Evaluation  
 
+<!-- 
 #### Paper by REPERE challenge 2014 winning consortium
+ -->
 
 F. Bechet, M. Bendris, D. Charlet, G. Damnati, B. Favre, M. Rouvier, R. Auguste, B. Bigot, R. Dufour, C. Fredouille, G. Linarès, J. Martinet, G. Senay, P. Tirilly  
 [*Multimodal Understanding for Person Recognition in Video Broadcasts*](http://pageperso.lif.univ-mrs.fr/~benoit.favre/papers/favre_interspeech2014b.pdf)  
 InterSpeech 2014, Fifteenth Annual Conference of the International Speech Communication Association  
 
+<!-- 
 #### Papers by the organizers
+ -->
 
 H. Bredin, A. Laurent, A. Sarkar, V.-B. Le, S. Rosset, C. Barras  
 [*Person Instance Graphs for Named Speaker Identification in TV Broadcast*](http://cs.uef.fi/odyssey2014/program/pdfs/27.pdf)  
