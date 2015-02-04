@@ -1,7 +1,6 @@
 
 # TODO list
 
-- [ ] Finir le proposal
 - [ ] Interface/script de soumission (avec possibilité de modification des soumissions)
 - [ ] Script d'extraction des annotations fournis
 - [ ] Outils de post-annotation / adjudication -> jeu ?
@@ -20,13 +19,9 @@
 - Récompense lors du workshop Mediaeval pour les meilleurs annotateurs
 
 ## Corpus REPERE
-- [ ] Vérifier les données disponibles
-- [ ] Vérifier les vidéos (avi)
-- [ ] Vérifier le package ELDA
-- [ ] Découpage dev/test corpus REPERE
-- [ ] Segmentation en plan -> Georges
+- [ ] Extraction des features images
 
-## Autre corpus (INA, UPC, Digiturk):
+## Autre corpus (INA, UPC):
 - [ ] Découpage des ensembles de dev et de test
 - [ ] Extraction des noms écrits
 - [ ] Transcription de la parole + détection des entités nommées
@@ -34,4 +29,10 @@
 - [ ] Segmentation en plan
 - [ ] Diarization des locuteurs
 - [ ] Diarization des visages (détection, tracking, flandmark, alignement, HoG)
+
+## Système de fusion de base fournit :
+- Fusion tardive type interspeech 2012 : 
+  * Propagation des noms écrits sur la diarization audio
+  * Propagation des noms des locuteurs vers les visages
+  * Sélection des tours de parole nommé et des visages nommés avec le même nom co-occurants
 
