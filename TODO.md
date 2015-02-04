@@ -31,8 +31,7 @@
 - [ ] Diarization des visages (détection, tracking, flandmark, alignement, HoG)
 
 ## Système de fusion de base fournit :
-- Fusion tardive type interspeech 2012 : 
-  * Propagation des noms écrits sur la diarization audio
-  * Propagation des noms des locuteurs vers les visages
-  * Sélection des tours de parole nommé et des visages nommés avec le même nom co-occurants
+- Propagation des noms écrits sur la diarization audio (Fusion tardive type interspeech 2012)
+- Propagation des noms des locuteurs vers les visages
+- Sélection des tours de parole et des visages (nommés par le même nom) co-occurants
 
