@@ -231,7 +231,6 @@ for the MediaEval 2013 survey.
 
 
  - Participants are asked to provide a proof for each returned shot (e.g., a short excerpt of the test set showing the person AND its name at the same time). Do you think this will influence the design of your algorithms? If you have an opinion, please comment.   
-
    * Yes, sure
    * Maybe
    * No
