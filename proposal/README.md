@@ -47,11 +47,13 @@ To ensure high quality indexes, those algorithms should also help human annotato
 
 #### Main task
 
-Given a collection of TV broadcasts pre-segmented into shots, participants are asked to provide, for each shot, the list of names of persons speaking AND appearing at the same time.
-
-The main novelty is that the list of persons is not provided *a priori* and the use of pre-existing biometric models (either from voice or from face) is forbidden. The only way to identify a person is by finding their name in the audio (*e.g.* using automatic speech recognition) or visual (*e.g.* using optical character recognition) streams and associating them to the correct person - making the task completely unsupervised.
+Given raw TV broadcasts, each shot must be automatically tagged with the name(s) of people who can be both seen as well as heard in the shot. The list of people is not known a priori and their names must be discovered in an unsupervised way from provided text overlay or speech transcripts. 
 
 ![Propagation](propagation.png)
+
+Participants are provided with a collection of TV broadcasts pre-segmented into shots, along with the output of several baseline components: speaker diarization, face detection and tracking, speech transcription, video OCR and named entity detection. 
+
+Participants are asked to provide, for each shot, the list of names of persons speaking AND appearing at the same time. The main novelty of the task is that the list of persons is not provided a priori, and person models (neither voice nor face) may not be trained on external data. The only way to identify a person is by finding their name in the audio (e.g., using speech transcription) or visual (e.g., using optical character recognition) streams and associating them to the correct person making the task completely unsupervised. For each returned shot, participants are also asked to provide the proof of their assertion (e.g. a short excerpt of the test set showing the person AND its name at the same time).
 
 Participants are also asked to provide a proof for every result they return.
 A proof is a short temporal video fragment making it clear (from a human perspective) what the name of the person is. For instance, it can be (but is not limited to) another shot where the same person is introduced by a text overlay containing their name (`proofSource = OCR`), or the shot itself where the person introduces themself (`proofSource = ASR`). 
@@ -69,19 +71,7 @@ shotVideo shotStartTime shotEndTime First-Name_LAST-NAME confidence proofSource 
   * `proofStartTime`: proof start time (in seconds)
   * `proofEndTime`: proof end time (in seconds)
 
-#### Optional task
-
-As we expect most submissions to internally rely on two-steps approaches (*i.e.* speaking-face diarization followed by propagation of detected names), an optional task is dedicated to the evaluation of underlying audio-visual diarization technologies.
-
-In this optional task, participants are asked to provide a temporal segmentation of the whole test corpus containing every temporal fragment where at least one person is speaking and appearing at the same time. Moreover, each person should be uniquely identified by an anonymous label (*e.g.* `person1`, `person2`, ...)
-
-```
-video startTime endTime personLabel
-```
-  * `video`: unique identifier of the video
-  * `startTime`: fragment start time
-  * `endTime`: fragment end time
-  * `personLabel`: unique identifier of the person
+The task data will include the original REPERE corpus set (50 hours annotated, 137 hours of raw videos) as development set. The test set is composed of 100 hours of French TV news and 43 hours of various Catalan TV shows (the AGORA corpus). The task will be evaluated using standard information retrieval metrics based on a posteriori collaborative annotation of the corpus. 
 
 ### Target group
 
@@ -98,6 +88,7 @@ This task targets researchers from several communities including multimedia, com
   * automatic speech transcription,
   * optical character recognition,
   * named entity detection
+  * Automatic speaker and face naming system as baseline
 
 For instance, a researcher from the speech processing community could focus its research efforts on improving speaker diarization and automatic speech transcription, while still being able to rely on provided face detection and tracking results to participate to the task.
 
@@ -109,13 +100,9 @@ Describe the data set, including how the data will be collected an licensed.
 ```
 -->
 
-The REPERE dataset (distributed by ELDA) contains 137 hours of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed freely by ELDA (Evaluation and Language resources Distribution Agency). Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
+The original REPERE corpus set will be used as development set. This corpus is composed of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed freely by ELDA (Evaluation and Language resources Distribution Agency). Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
 
-The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. The transcription follows the general guideline generated within the TC-STAR project for European Parliament Plenary Sessions but was extended to include additional information as the language, background condition, silence/voice segmentation, speaker segmentation and acoustic events. The transcriptions have four layers. Transcriptions follow the TRS format produced by the Transcriber transcribing tool.
-
-We are currently in discussion with INA to augment the REPERE dataset with 50+ hours of TV shows from additional TV channels, matching the broadcast dates of the original REPERE dataset.
-
-We are also in discussion (through Turkish partners of the CAMOMILE project) with Digiturk to add TV shows in a third language (*i.e.* Turkish).
+The test set is composed of 100 hours of French TV news and 43 hours of various Catalan TV shows (the AGORA corpus). The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. The transcription follows the general guideline generated within the TC-STAR project for European Parliament Plenary Sessions but was extended to include additional information as the language, background condition, silence/voice segmentation, speaker segmentation and acoustic events. 
 
 ### Evaluation methodology
 
@@ -148,11 +135,6 @@ In order to encourage participants to provide correct proofs, the main evaluatio
 To reduce the cost of *a posteriori* annotation of the test set, we plan to ask participants to help annotating the corpus through the annotation webapp currently being developed and tested within the *CAMOMILE* project. We might also rely on peaks in *Google Trends* to only annotate a person for TV shows whose broadcast date matches peaks dates (*i.e.* only annotate people when they are actually buzzing).
 
 An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
-
-#### Optional task
-
-The optional task will be evaluated on a subset (10 hours) of the REPERE test set which is already densely annotated in terms of people speaking AND appearing at the same time. We will use the Diarization Error Rate (DER) classicaly used in the speech community.
-
 
 ### References and recommended reading
 
@@ -203,9 +185,9 @@ IEEE/ACM Transactions on Audio, Speech, and Language Processing
   * Johann Poignant (postdoctoral researcher, LIMSI/CNRS)
   * Hervé Bredin (associate scientist, LIMSI/CNRS)
   * Claude Barras (associate professor, LIMSI/Université Paris-Sud)
-  * TO BE CONFIRMED: Félicien Vallet (research engineer, INA)
-  * TO BE CONFIRMED: Jean Carrive (head of research department, INA) 
-  * TO BE CONFIRMED: Juliette Kahn (evaluation engineer, LNE)
+  * Félicien Vallet (research engineer, INA)
+  * Jean Carrive (head of research department, INA) 
+  * Juliette Kahn (evaluation engineer, LNE)
 
 ## Task blurb
 
@@ -219,18 +201,15 @@ Second sentence: What is the data?
 Third sentence: How is the ￼task evaluated?
 ```
 -->
-
-Given raw TV broadcasts, each shot must be automatically tagged with the name of people both audible and visible.
-The list of people is not known *a priori* and their names must be discovered in an unsupervised way from text overlay or speech transcripts.
-The task will be evaluated on the extended REPERE corpus using standard information retrieval metrics based on *a posteriori* collaborative annotation of the corpus.
+Given raw TV broadcasts, each shot must be automatically tagged with the name(s) of people who can be both seen as well as heard in the shot. The list of people is not known a priori and their names must be discovered in an unsupervised way from provided text overlay or speech transcripts. The task will be evaluated on a new French corpus (provided by INA) and the AGORA Catalan corpus, using standard information retrieval metrics based on a posteriori collaborative annotation of the corpus
 
 ## Task organization team
 
 The Laboratoire d'Informatique pour la Mécanique et les Sciences de l'Ingénieur (LIMSI, French for Computer Science Laboratory for Mechanics and Engineering Sciences) is a CNRS laboratory with strong experience in evaluation campaigns as a participant (NIST SRE, NIST TRECVid, REPERE) and metadata provider (NIST TRECVid, MediaEval). LIMSI is currently coordinating the CAMOMILE project (Collaborative Annotation of multi-MOdal, MultI-Lingual and multi-mEdia documents) whose collaborative annotation framework will facilitate the organisation of the proposed task.
 
-TO BE CONFIRMED: The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (*e.g.* protocols or metrics)
+The Laboratoire National de métrologie et d'Essais (LNE, French for National Laboratory of Metrology and Testing) is a French reference laboratory responsible for carrying out measurement and testing products of all kinds for their certification for placing them on the market. LNE was responsible for the evaluation of the REPERE challenge and will advise the core organization team on several technical aspects of the evaluation campaign (*e.g.* protocols or metrics)
 
-TO BE CONFIRMED: The Institut National de l'Audiovisuel (INA, French for National Audiovisual Institute) is a repository of all French radio and television audiovisual archives. It will serve both as a content provider and advise the core organization team from an archivist point of view. 
+The Institut National de l'Audiovisuel (INA, French for National Audiovisual Institute) is a repository of all French radio and television audiovisual archives. It will serve both as a content provider and advise the core organization team from an archivist point of view. 
 
 ## Survey questions
 
@@ -244,37 +223,27 @@ for the MediaEval 2013 survey.
 ```
 -->
 
-- Keeping in mind that baseline monomodal modules will be provided (*e.g.* speaker diarization, face detection and tracking), what category of people should the task be evaluated on:  
-   * audible people (I am only interested in audio processing)
-   * visible people (I am only interested in video processing)
-   * people either audible or visible
-   * people both audible and visible (the task should be about the "multi" in "multimedia")
+- We are planning a data set of ca. 200 hours of material.
+    * This is an adequate amount.
+    * I would like more or less data. (Please describe your view on the data set size.)
 
-- Keeping in mind that your algorithm must not rely on prior biometric models, what should be the size of the development set for parameter tuning?
-   * I don't need any development set.
-   * 5 hours.
-   * 10 hours.
-   * 20 hours.
+ - We are thinking of asking participants to annotate videos with people who were the source of social media buzz (e.g., according to Google Trends) when the video was first broadcast. What do you think about this idea? (Please keep in mind, it is probably not feasible to annotate all of the data.)
 
-- Would you be interested in submitting contrastive runs using supervised person identification algorithms?
-   * yes
-   * no
 
-- Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of only annotating videos with people that were actually buzzing (*e.g.* according to Google Trends) when the video was aired?
-   * it is a good idea
-   * I'd rather annotate less videos but more people
-   * I'd rather annotate less people but more videos
-   * I have a better idea: ...........................................
+ - Participants are asked to provide a proof for each returned shot (e.g., a short excerpt of the test set showing the person AND its name at the same time). Do you think this will influence the design of your algorithms? If you have an opinion, please comment.   
 
-- Keeping in mind that we will (very likely) not be able to annotate the whole test corpus, what do you think of NOT annotating recurring TV anchors and journalists?
-   * I agree: there is no need to annotate anchors and journalists
-   * I disagree.
+   * Yes, sure
+   * Maybe
+   * No
+   * Comments
 
-- How much time can you (or your team) devote to the a posteriori collaborative annotation?
-   * None
-   * 1 day
-   * 2 days
-   * a week
-   * I annotate for fun - keep them coming!
+- How much time can you (or your team) devote to the a posteriori collaborative annotation?   
+   * Unfortunately, we wouldn't have time to help with annotation.
+   * 8 hours
+   * 16 hours
+   * 40 hours
+   * Other (please specify)
 
+- Is your participation affected by the languages included in the data (French and Catalan)? Recall that automatic speech transcription, optical character recognition and named entity detection will be provided for both the training and test sets. If you have an opinion, please comment.
+ 
 - If any additional comments, questions or suggestions about this task occurred to you while you were answering the detailed questions, it would be helpful if you could enter them here:
