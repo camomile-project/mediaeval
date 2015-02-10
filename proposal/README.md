@@ -227,10 +227,10 @@ for the MediaEval 2013 survey.
     * This is an adequate amount.
     * I would like more or less data. (Please describe your view on the data set size.)
 
- - We are thinking of asking participants to annotate videos with people who were the source of social media buzz (e.g., according to Google Trends) when the video was first broadcast. What do you think about this idea? (Please keep in mind, it is probably not feasible to annotate all of the data.)
+- We are thinking of asking participants to annotate videos with people who were the source of social media buzz (e.g., according to Google Trends) when the video was first broadcast. What do you think about this idea? (Please keep in mind, it is probably not feasible to annotate all of the data.)
 
 
- - Participants are asked to provide a proof for each returned shot (e.g., a short excerpt of the test set showing the person AND its name at the same time). Do you think this will influence the design of your algorithms? If you have an opinion, please comment.   
+- Participants are asked to provide a proof for each returned shot (e.g., a short excerpt of the test set showing the person AND its name at the same time). Do you think this will influence the design of your algorithms? If you have an opinion, please comment.   
    * Yes, sure
    * Maybe
    * No
