@@ -28,7 +28,7 @@
 - [ ] Ré-encodage video si besoin
 - [ ] Segmentation en plan
 - [ ] Diarization des locuteurs
-- [ ] Diarization des visages (détection, tracking, flandmark, alignement, HoG)
+- [ ] Distance entre track de visages (détection, tracking, flandmark, alignement, HoG)
 
 ## Système de fusion de base fournit :
 - Propagation des noms écrits sur la diarization audio (Fusion tardive type interspeech 2012)
