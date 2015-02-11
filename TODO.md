@@ -1,37 +1,35 @@
 
 # TODO list
+- Site web / forum pour les cores participants -> voir réponse de Martha
+- Contacter les potentiels cores particpants
+- Répondre aux questions du sondage
+- Récupérer les vidéos INA et AGORA
+- Pré-traiter les corpus REPERE, INA et AGORA
+  * REPERE : 
+    + Extraction des features images
+  * INA et AGORA :
+    + Découpage des ensembles de dev et de test
+    + Extraction des noms écrits
+    + Transcription de la parole + détection des entités nommées
+    + Ré-encodage video si besoin
+    + Segmentation en plan
+    + Diarization des locuteurs
+    + Distance entre track de visages (détection, tracking, flandmark, alignement, HoG, projection)
+- Préparer un script de fusion pour la baseline
+  * En entrée: diarization audio, clustering des tracks de visages, nom écrits
+  * En sortie: Segments temporels avec un nom associé + preuves
+  * Process :
+    + Propagation des noms écrits sur la diarization audio (Fusion tardive type interspeech 2012)
+    + Association un à un des cluster de visage avec les locuteurs de la diarization
+    + Sélection des tours de parole et des visages (nommés par le même nom) co-occurants
+    + Extraction d'une preuve pour chaque personne/vidéo
+- Interface/script de soumission (avec possibilité de modification des soumissions)
+- Script d'extraction des annotations fournis
+- Outils de post-annotation / adjudication
 
-- [ ] Interface/script de soumission (avec possibilité de modification des soumissions)
-- [ ] Script d'extraction des annotations fournis
-- [ ] Outils de post-annotation / adjudication -> jeu ?
 
-#### Jeux pour la post annotation
-- Trouver tous les images d'une personne dans un pêle-mêle :
-  * On montre un exemple d'image + le nom associé (prealablement vérifié)
-  * On affiche un pêle-mêle d'image 
-  * L'utilisateur doit sélectionner le plus vite (???) possible les images de la personnes cible
-  * Pour les images non sélectionnées mais faisant partie de l'hypothèse d'un participant -> adjudication
-- Blind test visuel: retrouver le nom d'une personne apparaissant dans une image le plus vite possible sans ce tromper
-- Puzzle: 
-  * On affiche un pêle-mêle d'images avec les preuves (dejà vérifiées) + des hypothèses
-  * On demande à l'utilisateur de regrouper les images de la même personnes dans un sac
-  * On nomme les sacs par le nom de la/les preuves qu'il y a dedans -> si 2 preuves de personnes differentes dans un sac : adjudication
-- Récompense lors du workshop Mediaeval pour les meilleurs annotateurs
 
-## Corpus REPERE
-- [ ] Extraction des features images
 
-## Autre corpus (INA, UPC):
-- [ ] Découpage des ensembles de dev et de test
-- [ ] Extraction des noms écrits
-- [ ] Transcription de la parole + détection des entités nommées
-- [ ] Ré-encodage video si besoin
-- [ ] Segmentation en plan
-- [ ] Diarization des locuteurs
-- [ ] Distance entre track de visages (détection, tracking, flandmark, alignement, HoG)
 
-## Système de fusion de base fournit :
-- Propagation des noms écrits sur la diarization audio (Fusion tardive type interspeech 2012)
-- Propagation des noms des locuteurs vers les visages
-- Sélection des tours de parole et des visages (nommés par le même nom) co-occurants
+
 
