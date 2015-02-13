@@ -73,11 +73,11 @@ https://hal.archives-ouvertes.fr/hal-01060827/document
   * Javier Hernando, UPC, Spain
 
 ##Task schedule
-1 April: Development data release
-1 May: Test data release
-1 July: Run submission
-28 August: Working notes paper deadline
-14-15 September MediaEval 2015 Workshop
+ - 1 April: Development data release
+ - 1 May: Test data release
+ - 1 July: Run submission
+ - 28 August: Working notes paper deadline
+ - 14-15 September MediaEval 2015 Workshop
 
 ##Acknowledgments
 https://camomile.limsi.fr/
