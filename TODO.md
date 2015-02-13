@@ -24,8 +24,24 @@
     + Sélection des tours de parole et des visages (nommés par le même nom) co-occurants
     + Extraction d'une preuve pour chaque personne/vidéo
 - Interface/script de soumission (avec possibilité de modification des soumissions)
-- Script d'extraction des annotations fournis
-- Outils de post-annotation / adjudication
+- Script d'extraction des annotations fournies vers des annotations en plan
+- Script de recherche de plan
+  * En Entrée : requête (nom, date, score de confiance) et de la liste des plans annotés par les particpant
+  * En Sortie : Liste ordonnée de plan
+  * Process : 
+- Script d'évaluation
+  * En Entrée : Liste ordonnée de plan / (nom, date)
+  * En Sortie : score 
+  * Process : 
+- Post-annotation 
+	* Constitution des jeux d'annotation : Pour chacun des participants à tour de rôle, on prend un nom et un vidéo au hasard (non annoté) dans leurs soumissions et l'on choisis les XX plans à annoté pour tous les participants. Un jeu d'annotation correspond aux XX plans sont choisis en fonction du score de confiance des particpants et de la distance entre le nom de la requête et le nom proposé par le participant
+	* Un jeu d'annotation est fournis à un annotateur qui annote l'ensemble des plans du jeu
+	* Annotation en 3 phases:
+		+ Vérification des preuves : on montre le segment vidéo est l'on valide ou pas le nom associé
+		+ Association entre un visage hypothèse est une preuve : une preuve et un ensemble d'imagette correspondant aux plans hypothèses sont montrés, l'utilisateur doit cliqué sur les visages des vignettes correspondant à la preuve
+		+ Vérification que le visage parle : chaque visage 
+- Adjudication
+
 
 
 
