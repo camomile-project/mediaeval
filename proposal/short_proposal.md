@@ -29,11 +29,12 @@ The original REPERE corpus set will be used as development set. This corpus is c
 The test set is composed of 100 hours of French TV news and 43 hours of various Catalan TV shows (the AGORA corpus). The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
 
 ##Ground truth and evaluation
-The evaluation will be done on a set of requests (person, video). These requests will be selected a posteriori (i.e. after runs have been submitted) among the union of list of people returned by participants. To create these requests, participants are asked to provide for each person-video a list of shots with an associated confidence score.
- 
-The person names must have the following format : "first name last name" (in lowercase with only the 26 characters of the latin alphabet without diacritical).
 
-Not to miss shots proposed by participants due to misspellings in person name, we will group the shots of a video where the hypotheses names that are close to the request name (according to the Levenshtein distance and a threshold on this distance). Hypotheses selected are ranked according to the confidence score. 
+Participants are asked to provide for each shot of a video a list of person speaking and appearing with an associated confidence score. 
+
+To evaluate this indexation we will select requests (person, video) a posteriori (i.e. after runs have been submitted) among the union of list of people returned by participants. The person names in the request follow this format : "first name last name" (in lowercase with only the 26 characters of the latin alphabet without diacritical).
+
+Not to miss shots proposed by participants due to misspellings in person name, we will group the shots of a video where the hypotheses names that are close to the person name in the request (according to an edit distance and a threshold on this distance). Shots selected are ranked according to the confidence score. 
 
 Groundtruth will be created a posteriori by manually checking the top N shots proposed by participants for each request. To reduce the cost of a posteriori annotation of the test set, we plan to ask participants to help annotating the corpus through the annotation webapp currently being developed and tested within the CAMOMILE project. 
 
