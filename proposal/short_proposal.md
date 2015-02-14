@@ -32,21 +32,19 @@ The test set is composed of 100 hours of French TV news and 43 hours of various 
 
 ## Ground truth and evaluation
 
-Participants are asked to return the names (and corresponding confidence scores and proof) of people speaking and appearing at the same time, for each each shot of the video. Those results will not be evaluated directly: they will serve as the index for a simple search experiment which, in turn, will be evaluated through mean average precision.
+Participants are asked to return the names (and corresponding confidence scores and proof) of people speaking and appearing at the same time, for each shot of the video. Those results will not be evaluated directly: they will serve as the index for a simple search experiment which, in turn, will be evaluated through mean average precision.
 
 Here is how the search experiment is designed. 
-Queries takes the following form: `PersonFirstName PersonLastName`. 
-First, shots whose names are too different from the query (i.e. by applying a predefined threshold on a string distance) are filtered out. Then, remaining shots are ranked according to the confidence scores provided by the participants.
+Based on participant submissions, we will select a set of queries following the form: `<PersonFirstName PersonLastName, video>`. 
+For each query, shots (indexing by participants for the corresponding video) whose name is close from the query name (i.e. by applying a predefined threshold on a string distance) are ranked according to the confidence score. Note that both queries and names will be normalized beforehand (by removing diacritical and all but the 26 latin alphabet characters and space).
 
 Groundtruth will also be created a posteriori by manually checking the top N shots proposed by participants for each request. We will kindly ask participants to contribute to the annotation via the collaborative annotation webapp developed in the framework of the CHISTERA Camomile project. Proofs provided by participants are here to ease and speed up the annotation process.
-
-Queries will be selected a posteriori based on names obtained from participants submissions. Not that both queries and names will be normalized beforehand (by removing all but the 26 latin alphabet characters and space).
 
 Average precision will be modified slightly to take the quality of proofs into account. Hence, instead of a binary judgment (relevant vs. not relevant), shot relevance will be computed as follows (the value of α is not yet decided):
 
 {shot relevance}  = α . {shot is relevant} + (1 - α) . {proof is correct}
 
-In order to prevent giving too much weight to predominant people, we will first compute the Mean Average Precision over all videos for a particular query, and then compute a Mean Mean Average Precision over all queries.
+In order to prevent giving too much weight to predominant people, we will first compute the Mean Average Precision over all videos for a particular person, and then compute a Mean Mean Average Precision over all persons.
 
 An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
 
