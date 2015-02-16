@@ -1,14 +1,10 @@
 # MediaEval 2015 / Multimodal Person Discovery in TV Broadcast
 
-This task is trying to re-imagine the (now completed) REPERE challenge, which focused on multimodal person recognition in TV broadcast. The main objective of this challenge was to answer the two questions "who speaks when?" and "who appears when?" using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts).
-
 TV archives maintained by national institutions such as French INA, Dutch Sound&Vison or the BBC are getting bigger everyday. Automatically creating indexes to make those archives searchable may lead to lots of potentially very useful applications.
-
 One of the most promising indexes is people. People are interested in people by nature. One day or another, anyone may start buzzing and become a trending topic on social networks or search engines. It is however impossible to predict who is going to buzz and who isn't, making it difficult to generate a list of person of interests in advance.
-
 Therefore, biometric models for some people may not be available at indexing time, simply because they are not (yet) famous. Even worse, archivist human annotators may not even know their name! 
 
-Hence, unsupervised algorithms (i.e. not relying on any biometric models) are needed. To ensure high quality indexes, those algorithms should also help human annotators double-check these indexes by providing a proof of the claimed identity (especially for people that are not yet famous).
+This task is trying to re-imagine the (now completed) French REPERE challenge, which focused on multimodal person recognition in TV broadcast. The main objective of this challenge was to answer the two questions "who speaks when?" and "who appears when?" using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts). In this new task, only unsupervised algorithms (i.e. not relying on any biometric models) are possible. To ensure high quality indexes, those algorithms should also help human annotators double-check these indexes by providing a proof of the claimed identity (especially for people that are not yet famous).
 
 ![Propagation](propagation.png)
 
@@ -26,26 +22,24 @@ For instance, a researcher from the speech processing community could focus its 
 
 ## Data
 
-The original REPERE corpus set will be used as development set. This corpus is composed of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed freely by ELDA (Evaluation and Language resources Distribution Agency). Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
+The original REPERE corpus set will be used as development set. This corpus is composed of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed by ELDA (Evaluation and Language resources Distribution Agency) freely or at distribution cost. Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
 
-The test set is composed of 100 hours of French TV news and 43 hours of various Catalan TV shows (the AGORA corpus). The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
+The test set is composed of 100 hours of French TV news provided by INA and 43 hours of various Catalan TV shows (the AGORA corpus). The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
 
 ## Ground truth and evaluation
 
 Participants are asked to return the names (and corresponding confidence scores and proof) of people speaking and appearing at the same time, for each shot of the video. Those results will not be evaluated directly: they will serve as the index for a simple search experiment which, in turn, will be evaluated through mean average precision.
 
 Here is how the search experiment is designed. 
-Based on participant submissions, we will select a set of queries following the form: `<PersonFirstName PersonLastName, video>`. 
-For each query, shots (indexing by participants for the corresponding video) whose name is close from the query name (i.e. by applying a predefined threshold on a string distance) are ranked according to the confidence score. Note that both queries and names will be normalized beforehand (by removing diacritical and all but the 26 latin alphabet characters and space).
+Based on participant submissions, we will select a set of queries following the form: 'PersonFirstName PersonLastName' possibly restricted to a temporal interval. 
+For each query and for each video within the chosen period, the shots for which a submitted person name is close to the query name (i.e. by applying a predefined threshold on a string distance) will be selected and ranked according to their confidence score. Note that both queries and names will be normalized beforehand (by removing diacritical and all but the 26 case-insensitive latin alphabet characters and space). It will result in an average precision specific to the query and to the video.
+In order to prevent giving too much weight to predominant people or to individual video, we will first compute the Mean Average Precision over all videos where a particular person is detected, and then compute a Mean Mean Average Precision over all persons.
 
-Groundtruth will also be created a posteriori by manually checking the top N shots proposed by participants for each request. We will kindly ask participants to contribute to the annotation via the collaborative annotation webapp developed in the framework of the CHISTERA Camomile project. Proofs provided by participants are here to ease and speed up the annotation process.
-
-Average precision will be modified slightly to take the quality of proofs into account. Hence, instead of a binary judgment (relevant vs. not relevant), shot relevance will be computed as follows (the value of α is not yet decided):
+Average precision will be modified slightly to take the quality of proofs into account. Hence, instead of a binary judgment (relevant vs. not relevant), shot relevance will be computed as follows (the value of α will be discussed during the development phase):
 
 {shot relevance}  = α . {shot is relevant} + (1 - α) . {proof is correct}
 
-In order to prevent giving too much weight to predominant people, we will first compute the Mean Average Precision over all videos for a particular person, and then compute a Mean Mean Average Precision over all persons.
-
+Groundtruth will be created a posteriori by manually checking the top N shots proposed by participants for each request and the associated proof. We will kindly ask participants to contribute to the annotation via the collaborative annotation webapp developed in the framework of the CHISTERA Camomile project. Proofs provided by participants will ease and speed up the annotation process.
 An online adjudication interface will be opened after the first round of evaluations to solve remaining ambiguous cases.
 
 ## Recommended reading
@@ -75,22 +69,18 @@ https://hal.archives-ouvertes.fr/hal-01060827/document
 
   * Félicien Vallet, research engineer at INA, France
   * Jean Carrive, head of research department at INA, France
+  * XXX, ELDA, France
   * Juliette Kahn, evaluation engineer at LNE, France
-  * Javier Hernando, UPC, Spain
 
 ## Task schedule
 
  - 1 April: Development data release
  - 1 May: Test data release
- - 1 July: Run submission
+ - 1 July: Run submission and start of collaborative annotation
+ - 15 August: End of collaborative annotation and scoring of systems
  - 28 August: Working notes paper deadline
  - 14-15 September MediaEval 2015 Workshop
 
 ## Acknowledgments
 
 https://camomile.limsi.fr/
-
-
-
-
-
