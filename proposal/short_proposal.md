@@ -68,7 +68,7 @@ https://hal.archives-ouvertes.fr/hal-01060827/document
 ## Task auxiliaries
 
   * Félicien Vallet, research engineer at INA, France
-  * Jean Carrive, head of research department at INA, France
+  * Jean Carrive, deputy head of research department at INA, France
   * XXX, ELDA, France
   * Juliette Kahn, evaluation engineer at LNE, France
 
