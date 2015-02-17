@@ -24,7 +24,8 @@ For instance, a researcher from the speech processing community could focus its 
 
 The original REPERE corpus set will be used as development set. This corpus is composed of various TV shows (focusing on news, politics and people) from two French TV channels. It will be distributed by ELDA (Evaluation and Language resources Distribution Agency) freely or at distribution cost. Among those 137 hours, 50 are already manually annotated. Audio annotations are dense and provide speech transcripts and identity-labeled speech turns. Video annotations are sparse (one image every 10 seconds) and provide overlaid text transcripts and identity-labeled face segmentation. Both speech and overlaid text transcripts are tagged with named entities.
 
-The test set is composed of 100 hours of French TV news provided by INA and 43 hours of various Catalan TV shows (the AGORA corpus). The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
+The test set is composed of two corpora, a French TV news corpus provided by INA and the Catalan AGORA corpus. The INA corpus contains 115 hours of video, corresponding to 181 editions of evening broadcast news "Le 20 heures" of French public channel "France 2", from January 1st 2007 to June 30st 2007. Videos are provided as 181 MPEG1 files.
+The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
 
 ## Ground truth and evaluation
 
