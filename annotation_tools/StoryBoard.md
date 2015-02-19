@@ -17,6 +17,9 @@
  - Si elle ne trouve pas la personne, elle clique sur un bouton.
  - Correction du nom de la personne ???
 
+![OCR](OCR.png)
+
+
 ## Annotation des preuves ASR
 
 #### Informations en entrées : 
@@ -36,6 +39,9 @@
  - Si elle ne trouve pas la personne, elle clique sur un bouton.
  - Correction du nom de la personne ???
  
+ ![ASR](ASR.png)
+
+ 
 ## Vérification de l'identité des visages
 
 - On affiche l'image d'une preuve + un nom.
@@ -44,6 +50,7 @@
 - Si la personne n'est pas visible, l'annotateur peut chercher une meilleur image dans le plan en lisant la vidéo.
 - Si la personne n'apparait pas dans le plan, elle clique sur un bouton.
 
+ ![Face](Face.png)
 
 ## Vérification que les visages parlent
 
@@ -51,3 +58,5 @@
 - L'annotateur joue la vidéo est vérifie si la personne parle dans le plan.
 
 On peut utiliser un classifieur pour savoir si le visage parle ou non, et l'on annote manuellement que les cas négatifs ou limites
+
+ ![Speaking_face](Speaking_face.png)
