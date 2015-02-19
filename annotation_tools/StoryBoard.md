@@ -6,7 +6,7 @@
  - nom de la personne
  - nom de la vidéo 
  - timestamp où le nom est écrit à l'écran
- - timestamp où apparait la personne
+ - timestamp où apparait la personne (identique au précédent ???)
  
 #### Scénario :
  - On affiche le nom de la personne correspondant à la preuve.
@@ -22,7 +22,7 @@
  - nom de la personne
  - nom de la vidéo 
  - timestamp où le nom est prononcé
- - timestamp où apparait la personne
+ - timestamp où apparait la personne (proche du précédent ???)
  - La phrase prononcée et le nom taggé
 
 #### Scénario :
