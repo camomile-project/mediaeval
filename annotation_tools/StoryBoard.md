@@ -44,6 +44,11 @@
  
 ## Vérification de l'identité des visages
 
+#### Informations en entrées : 
+ - Une image d'un visage
+ - Une liste de plan de vidéos
+
+#### Scénario :
 - On affiche l'image d'une preuve + un nom.
 - On affiche une liste d'imagettes correspondant au centre de chacun des plans à annoter pour une vidéo.
 - Si la personne correspondante est visible, l'annotateur clique sur son visage.
@@ -54,6 +59,10 @@
 
 ## Vérification si les visages parlent
 
+#### Informations en entrées : 
+ - Un plan d'une vidéo
+
+#### Scénario :
 - On affiche un plan avec un visage entouré (celui sur lequel l'annotateur a cliqué dans l'étape précédente).
 - L'annotateur joue la vidéo est vérifie si la personne parle dans le plan.
 
