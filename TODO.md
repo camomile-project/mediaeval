@@ -1,20 +1,17 @@
-
 # TODO list
 
 ## Inscription
-
 - Site web / forum pour les cores participants -> voir réponse de Martha
 - Contacter les potentiels cores participants de REPERE et Camomile avec un mail perso
 - Répondre aux questions du sondage
+- Faire le proposal en version longue
 
 ## Données
-
 - Récupérer les vidéos INA et AGORA
 - Pré-traiter les corpus REPERE, INA et AGORA
   * REPERE : 
     + Extraction des features images
   * INA et AGORA :
-    + Découpage des ensembles de dev et de test
     + Extraction des noms écrits
     + Transcription de la parole + détection des entités nommées
     + Ré-encodage video si besoin
@@ -23,15 +20,20 @@
     + Distance entre track de visages (détection, tracking, flandmark, alignement, HoG, projection)
   
 ## Système baseline
-
-- Préparer un script de fusion pour la baseline
-  * En entrée: diarization audio, clustering des tracks de visages, nom écrits
-  * En sortie: Segments temporels avec un nom associé + preuves
+#### Préparer un script de fusion pour la baseline
+  * En entrée : diarization audio, clustering des tracks de visages, nom écrits
+  * En sortie : Segments temporels avec un nom associé + preuves
   * Process :
     + Propagation des noms écrits sur la diarization audio (Fusion tardive type interspeech 2012)
     + Association un à un des cluster de visage avec les locuteurs de la diarization
     + Sélection des tours de parole et des visages (nommés par le même nom) co-occurants
     + Extraction d'une preuve pour chaque personne/vidéo
+
+## Système organisateur
+#### Clustering agglomératif contraint
+- Extraction descripteur de visage qui parle
+- Extraction des matrices hvh, svs, svh normalisées
+- Vérifier le script de fusion
 
 ## Annotations
 - Constitution des jeux d'annotations : 
@@ -47,9 +49,9 @@
 		- réduire la liste des vérifications à faire avec le score de la matrice svh
 
 ## Evaluation
-
+- Choisir le format des données entrées / sorties
 - Interface/script de soumission (avec possibilité de modification des soumissions)
-- Script d'extraction des annotations fournies vers des annotations en plan
+- Script d'extraction des annotations fournies (REPERE, ...) vers des annotations en plan
 - Script de recherche de plan
   * En Entrée : requête (nom, date, score de confiance) et de la liste des plans annotés par les particpant
   * En Sortie : Liste ordonnée de plan
