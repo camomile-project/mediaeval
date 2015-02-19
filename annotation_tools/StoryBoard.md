@@ -49,3 +49,5 @@
 
 - On affiche un plan avec un visage entouré (celui sur lequel l'annotateur a cliqué dans l'étape précédente).
 - L'annotateur joue la vidéo est vérifie si la personne parle dans le plan.
+
+On peut utliser un classifieur pour savoir si le visage parle ou non, et l'on annote manuellement que les cas négatifs ou limites
