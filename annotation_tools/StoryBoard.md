@@ -4,8 +4,9 @@
 
 #### Informations en entrée : 
  - nom de la personne
- - nom de la vidéo + timestamp où le nom est écrit à l'écran
- - nom de la vidéo + timestamp où apparait la personne
+ - nom de la vidéo 
+ - timestamp où le nom est écrit à l'écran
+ - timestamp où apparait la personne
  
 #### Scénario :
  - On affiche le nom de la personne correspondant à la preuve.
@@ -19,14 +20,15 @@
 
 #### Informations en entrée : 
  - nom de la personne
- - nom de la vidéo + timestamp où le nom est prononcé
- - nom de la vidéo + timestamp où apparait la personne
+ - nom de la vidéo 
+ - timestamp où le nom est prononcé
+ - timestamp où apparait la personne
  - La phrase prononcée et le nom taggé
 
 #### Scénario :
  - On affiche le nom de la personne correspondant à la preuve.
  - On affiche le segment vidéo où le nom est prononcé, calé sur le timestamp fourni -10 secondes.
- - On affiche la vidéo où apparait la personne, calé sur le timestamp fourni.
+ - On affiche la segment vidéo où apparait la personne, calé sur le timestamp fourni.
  - On joue la vidéo pendant 20 secondes
   - On demande à l'utilisateur de cliquer sur le visage correspondant au nom.
  - Si l'annotateur ne voit pas la personne correspondante dans l'image affiché, elle peut lire le plan de la vidéo pour trouver une meilleur image.
