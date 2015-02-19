@@ -52,7 +52,7 @@
 
  ![Face](Face.png)
 
-## Vérification que les visages parlent
+## Vérification si les visages parlent
 
 - On affiche un plan avec un visage entouré (celui sur lequel l'annotateur a cliqué dans l'étape précédente).
 - L'annotateur joue la vidéo est vérifie si la personne parle dans le plan.
