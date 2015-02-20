@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="todo-list">TODO list</h1>
+<h2 id="inscription-avant-le-2802">Inscription (avant le 28/02)</h2>
+<ul>
+<li>Site web / forum pour les participants -&gt; voir réponse de Martha</li>
+<li>Contacter les potentiels cores participants de REPERE et Camomile avec un mail perso (Sylvain, Hazim, Javier, ???)</li>
+<li>Répondre aux questions du sondage</li>
+<li>Faire le proposal en version longue: ajouter au short proposal
+<ul>
+<li>Protocol pour récupérer les corpus</li>
+<li>Des détails sur les composants fournis</li>
+<li>Des détails sur la métrique</li>
+<li>Le format de données entrée / sortie</li>
+<li>La méthode de choix des plans à annoter</li>
+<li>Déroulement de la post-annotation</li>
+<li>Déroulement de l'adjudication</li>
+</ul></li>
+</ul>
+<h2 id="données-avant-le-104">Données (avant le 1/04)</h2>
+<ul>
+<li>Récupérer les vidéos INA et AGORA</li>
+<li>Vérifier le protocol pour les futurs participants (lien, document à remplir)</li>
+<li>Pré-traiter les corpus REPERE, INA et AGORA
+<ul>
+<li>INA et AGORA :
+<ul>
+<li>Ré-encodage video si besoin ???</li>
+<li>Extraction des noms écrits</li>
+<li>Transcription de la parole + détection des entités nommées</li>
+<li>Segmentation en plan</li>
+<li>Matrice de distances entre track de visages</li>
+</ul></li>
+<li>REPERE, INA et AGORA :
+<ul>
+<li>Diarization audio (REPERE ???)</li>
+<li>Matrice de distance entre tours de parole ???</li>
+<li>Matrice de distance entre visage et tours de parole ???</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="système-de-fusion-baseline-avant-le-104">Système de fusion baseline (avant le 1/04)</h2>
+<ul>
+<li>En entrée : diarization audio, clustering des tracks de visages, nom écrits</li>
+<li>En sortie : Segments temporels avec un nom associé + preuves</li>
+<li>Process :
+<ul>
+<li>Propagation des noms écrits sur la diarization audio (Fusion tardive type interspeech 2012)</li>
+<li>Association un à un des cluster de visage avec les locuteurs de la diarization</li>
+<li>Sélection des tours de parole et des visages (nommés par le même nom) co-occurants</li>
+<li>Extraction d'une preuve pour chaque personne/vidéo</li>
+</ul></li>
+</ul>
+<h2 id="système-de-fusion-limsi-avant-le-107">Système de fusion Limsi (avant le 1/07)</h2>
+<ul>
+<li>Extraction descripteurs visages qui parlent</li>
+<li>Calcul des matrices hvh, svs, svh normalisées</li>
+<li>Vérifier le script de clustering agglomératif contraint</li>
+<li>Tester un clustering K-Means contraint</li>
+</ul>
+<h2 id="système-dannotations-avant-le-0107">Système d'annotations (avant le 01/07)</h2>
+<ul>
+<li>Script de constitution des jeux d'annotations :
+<ul>
+<li>Pour chacun des participants à tour de rôle, on prend un nom+vidéo au hasard (non annoté) dans leurs soumissions</li>
+<li>On choisis l'ensemble des XX premiers plans proposé par les participants -&gt; un jeu d'annotations</li>
+</ul></li>
+<li>Annotation en 3 phases :
+<ul>
+<li>Vérification des preuves</li>
+<li>Identification des visages sur des vignettes à partir d'un visage témoin (une preuve)</li>
+<li>Vérification que les visages sélectionnés dans l'état précédente parle bien dans le plan courant.</li>
+</ul></li>
+<li>Choisir la procédure du choix de l'ordre du type d'annotation (preuves, visages, visages parlant) à effectuer</li>
+<li>Script de remplissage des queues pour l'annotation</li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<ul>
+<li>Choisir le format des données entrées / sorties (<strong>avant le 28/02</strong>)</li>
+<li>Script d'extraction des annotations fournies (REPERE, ...) vers des annotations en plan (<strong>avant le 01/04</strong>)</li>
+<li>Script de classement des plans indéxés (<strong>avant le 1/04</strong>)
+<ul>
+<li>En Entrée : requête (nom, date), et la liste des plans annotés par un participant</li>
+<li>En Sortie : Liste ordonnée de plan</li>
+<li>Process :
+<ol style="list-style-type: decimal">
+<li>Recherche des noms proposés proche du noms de la requête</li>
+<li>Classement des plans des noms proches en fonction du score de confiance associé</li>
+</ol></li>
+</ul></li>
+<li>Script d'évaluation (<strong>avant le 1/04</strong>)
+<ul>
+<li>En Entrée : pour chaque requête (nom, date) : une liste de plan ordonnée, les plans annotés</li>
+<li>En Sortie : score MMAP@n</li>
+<li>Process :
+<ol style="list-style-type: decimal">
+<li>On calcul de la precision moyenne à n pour une requête (nom, date), avec P(k) qui est égale à la précision des kième premiers éléments de la liste : <span class="math">\[ ap@n = \sum_{k=1}^n P(k) / min(m, n)  \]</span></li>
+<li>On calcul la MAP@n pour une personne sur V vidéos où elle apparait : <span class="math">\[ MAP@n = \sum_{v=1}^V ap@n_v / V \]</span></li>
+<li>On calcul la MMAP@n total sur l'ensemble des personnes: <span class="math">\[ MMAP@n = \sum_{i=1}^N MAP@n_i / N \]</span></li>
+</ol></li>
+</ul></li>
+<li>Interface/script de soumission (avec possibilité de modification des soumissions) (<strong>avant le 01/05</strong>)</li>
+<li>Interface d'adjudication: (<strong>avant le 1/08</strong>)
+<ul>
+<li>Dans l'interface, afficher une vidéo + timeline avec la diff entre la référence et la soumission</li>
+</ul></li>
+</ul>
+</body>
+</html>
