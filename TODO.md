@@ -15,6 +15,9 @@
 
 ## Données (avant le 1/04)
 - Récupérer les vidéos INA et AGORA
+	* INA : attendre serveur Quaero
+	* AGORA : 
+		+ Johann : j'ai créer un compte sur metashare mais il est noté comme désactivé, j'ai envoyé un mail à Javier pour lui demander quoi faire
 - Vérifier le protocol pour les futurs participants (lien, document à remplir)
 - Pré-traiter les corpus REPERE, INA et AGORA
 	* INA et AGORA : 
