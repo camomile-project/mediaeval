@@ -17,6 +17,7 @@
 	* INA : attendre serveur Quaero
 	* AGORA : 
 		+ Johann : j'ai créer un compte sur metashare mais il est noté comme désactivé, j'ai envoyé un mail à Javier pour lui demander quoi faire
+		+ Réponse de Ramon : We still did not upload the Agora data. We are planning to do so as soon as possible. I will inform you later this week.
 - Vérifier le protocol pour les futurs participants (lien, document à remplir)
 - Pré-traiter les corpus REPERE, INA et AGORA
 	* INA et AGORA : 
