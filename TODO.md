@@ -2,7 +2,6 @@
 
 ## Inscription (avant le 28/02)
 - Site web / forum pour les participants -> voir réponse de Martha
-- Contacter les potentiels cores participants de REPERE et Camomile avec un mail perso (Sylvain, Hazim, Javier, ???)
 - Répondre aux questions du sondage
 - Faire le proposal en version longue: ajouter au short proposal
 	* Protocol pour récupérer les corpus
