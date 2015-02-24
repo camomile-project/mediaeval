@@ -3,25 +3,19 @@
 ## Inscription (avant le 28/02)
 - Site web / forum pour les participants -> voir réponse de Martha
 - Répondre aux questions du sondage
-- Faire le proposal en version longue: ajouter au short proposal
-	* Protocol pour récupérer les corpus
-	* Des détails sur les composants fournis
-	* Des détails sur la métrique
-	* Le format de données entrée / sortie
-	* La méthode de choix des plans à annoter
-	* Déroulement de la post-annotation
-	* Déroulement de l'adjudication
+- Nom d'un interlocuteur pour ELDA dans le short proposal
+- Compléter le fichier task_description
 
-## Données (avant le 1/04)
+## Données (avant le 1/05)
 - Récupérer les vidéos INA et AGORA
-	* INA : attendre serveur Quaero
+	* INA : attendre le serveur Quaero
 	* AGORA : 
 		+ Johann : j'ai créer un compte sur metashare mais il est noté comme désactivé, j'ai envoyé un mail à Javier pour lui demander quoi faire
 		+ Réponse de Ramon : We still did not upload the Agora data. We are planning to do so as soon as possible. I will inform you later this week.
-- Vérifier le protocol pour les futurs participants (lien, document à remplir)
+- Vérifier le protocole pour les futurs participants (lien, documents à remplir)
 - Pré-traiter les corpus REPERE, INA et AGORA
 	* INA et AGORA : 
-		+ Ré-encodage video si besoin ???
+		+ Ré-encodage des vidéos si besoin ???
 		+ Extraction des noms écrits
 		+ Transcription de la parole + détection des entités nommées
 		+ Segmentation en plan
@@ -31,7 +25,7 @@
 		+ Matrice de distance entre tours de parole ???
 		+ Matrice de distance entre visage et tours de parole ???
 
-## Système de fusion baseline (avant le  1/04)
+## Système de fusion baseline (avant le  1/05)
 - En entrée : diarization audio, clustering des tracks de visages, nom écrits
 - En sortie : Segments temporels avec un nom associé + preuves
 - Process :
@@ -59,14 +53,14 @@
 
 ## Evaluation
 - Choisir le format des données entrées / sorties (**avant le 28/02**)
-- Script d'extraction des annotations fournies (REPERE, ...) vers des annotations en plan (**avant le 01/04**)
-- Script de classement des plans indéxés  (**avant le 1/04**)
+- Script d'extraction des annotations fournies (REPERE, ...) vers des annotations en plan (**avant le 01/05**)
+- Script de classement des plans indéxés  (**avant le 1/05**)
     * En Entrée : requête (nom, date), et la liste des plans annotés par un participant
     * En Sortie : Liste ordonnée de plan
     * Process : 
     	1. Recherche des noms proposés proche du noms de la requête
     	2. Classement des plans des noms proches en fonction du score de confiance associé
-- Script d'évaluation  (**avant le 1/04**)
+- Script d'évaluation  (**avant le 1/05**)
 	* En Entrée : pour chaque requête (nom, date) : une liste de plan ordonnée et les plans annotés correspondants
 	* En Sortie : score MMAP@n
 	* Process : 
@@ -76,7 +70,7 @@ $$ ap@n = \sum_{k=1}^n P(k) / min(m, n)  $$
 $$ MAP@n = \sum_{v=1}^V ap@n_v / V $$
 		3. On calcul la MMAP@n total sur l'ensemble des personnes:
 $$ MMAP@n = \sum_{i=1}^N MAP@n_i / N $$
-- Interface/script de soumission (avec possibilité de modification des soumissions) (**avant le 01/05**)
+- Interface/script de soumission (avec possibilité de modification des soumissions) (**avant le 01/06**)
 - Interface d'adjudication: (**avant le 1/08**)
 	* Dans l'interface, afficher une vidéo + timeline avec la diff entre la référence et la soumission
 	
