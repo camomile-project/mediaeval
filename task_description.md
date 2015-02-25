@@ -6,6 +6,8 @@ Therefore, biometric models for some people may not be available at indexing tim
 
 This task is trying to re-imagine the (now completed) French REPERE challenge, which focused on multimodal person recognition in TV broadcast. The main objective of this challenge was to answer the two questions "who speaks when?" and "who appears when?" using any sources of information (including pre-existing biometric models and person names extracted from text overlay and speech transcripts). In this new task, only unsupervised algorithms (i.e. not relying on any biometric models) are possible. To ensure high quality indexes, those algorithms should also help human annotators double-check these indexes by providing a proof of the claimed identity (especially for people that are not yet famous).
 
+**definition unsupervised algorithm: without audio or image outside the test data to build speaker or face models**
+
 ![Propagation](propagation.png)
 
 Given raw TV broadcasts, each shot must be automatically tagged with the name(s) of people who can be both seen as well as heard in the shot. The list of people is not known a priori and their names must be discovered in an unsupervised way from provided text overlay or speech transcripts. 
@@ -27,6 +29,7 @@ The original REPERE corpus set will be used as development set. This corpus is c
 The test set is composed of two corpora, a French TV news corpus provided by INA and the Catalan AGORA corpus. The INA corpus contains 115 hours of video, corresponding to 181 editions of evening broadcast news "Le 20 heures" of French public channel "France 2", from January 1st 2007 to June 30st 2007. Videos are provided as 181 MPEG1 files.
 The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
 
+** Problem on data AGORA : wave of this corpora is already downloadable with speakers identity**
 
 ### Data access
 
