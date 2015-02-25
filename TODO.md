@@ -7,6 +7,10 @@
 - Compléter le fichier task_description
 
 ## Données (avant le 1/05)
+
+** Problème avec les données AGORA : les waves sont déjà téléchargeable avec les trs et l'identité des locuteurs** : 
+ - Voir si tous les corpus a été transcrit, si non on réduit le test à la partie non transcrit -> il nous faut une transcription auto  + détection des noms de personnes auto
+
 - Récupérer les vidéos INA et AGORA
 	* INA : attendre le serveur Quaero
 	* AGORA : 
