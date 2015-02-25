@@ -29,8 +29,6 @@ The original REPERE corpus set will be used as development set. This corpus is c
 The test set is composed of two corpora, a French TV news corpus provided by INA and the Catalan AGORA corpus. The INA corpus contains 115 hours of video, corresponding to 181 editions of evening broadcast news "Le 20 heures" of French public channel "France 2", from January 1st 2007 to June 30st 2007. Videos are provided as 181 MPEG1 files.
 The AGORA dataset contains 43 hours of various TV shows (debates with a high variation in topics and invited speakers) from the Catalan public channel TV3. 
 
-** Problem on data AGORA : wave of this corpora is already downloadable with speakers identity**
-
 ### Data access
 
 **Add few lines about how to get the data**
