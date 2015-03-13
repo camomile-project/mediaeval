@@ -21,7 +21,7 @@
 	* INA et AGORA : 
 		+ Ré-encodage des vidéos si besoin ???
 		+ Extraction des noms écrits
-		+ Transcription de la parole + détection des entités nommées
+		+ Transcription de la parole + détection des entités nommées   ???? obligatoire ????
 		+ Segmentation en plan
 		+ Matrice de distances entre track de visages 
 	* REPERE, INA et AGORA : 
