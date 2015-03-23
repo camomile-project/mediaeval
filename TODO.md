@@ -11,6 +11,8 @@
 **Problème avec les données AGORA : les waves sont déjà téléchargeable avec les trs et l'identité des locuteurs** : 
  - Voir si tous les corpus a été transcrit, si non on réduit le test à la partie non transcrit -> il nous faut une transcription auto  + détection des noms de personnes auto
 
+**Problème avec les données AGORA : il n'y a pas d'accord pour l'utilisation des images, seulement pour l'audio**
+
 - Récupérer les vidéos INA et AGORA
 	* INA : attendre le serveur Quaero
 	* AGORA : 
@@ -54,6 +56,15 @@
 	* Vérification que les visages sélectionnés dans l'état précédente parle bien dans le plan courant.
 - Choisir la procédure du choix de l'ordre du type d'annotation (preuves, visages, visages parlant) à effectuer 
 - Script de remplissage des queues pour l'annotation
+- Backup de la base
+
+## Annotation par le LIG du corpus INA
+- Développement d'une interface d'annotation des visages (**avant le 1/06**)
+- Active learning annotation pendant le mois de **juin** par le LIG:
+	1. Le back-end du LIG sélectionne des shots à annoter
+	2. On présente une liste de shot à un annotateur.
+	3. Il vérifie si la personne visée par l'annotation est bien présente dans les shots
+	4. Retour au 1. avec les nouvelles annotations en entrées en plus
 
 ## Evaluation
 - Choisir le format des données entrées / sorties (**avant le 28/02**)
