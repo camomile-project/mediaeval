@@ -2,53 +2,56 @@ mediaeval data
 ==============
 
 # Package REPERE (FTP or HD)
+ - ELDA_package
 
- - README.md
- - Data
-   + Video_AVI
-   + Video_MPEG
-   + Audio_wave
-   + idx
- - Groundtruth
-   + trs
-   + xgtf
-   + mdtm
-   + shot_ref
+# GitHub.com/PersonDiscoveryatMediaeval2015 
+
+## Task
+ - Proposal.md
+
+## Metric
+ - Reference_shot.ref
+ - Reference_evidence.ref
+ - Hypothesis_baseline1.hyp
+ - Hypothesis_baseline2.hyp
+ - eval_MMAP.py
+ - eval_evidence.py
+ - Global_eval.py
  - uri_list
+   + mapping_uri_to_media
    + uri.train1.lst
    + uri.train2.lst
    + uri.dev1.lst
    + uri.dev2.lst
    + uri.test1.lst
    + uri.test2.lst
+ 
+## Metadata : automatic_annotation_on_raw_video
+ - Shot_segmentation
+ - Video_OCR
+ - ASR
+ - Spoken_name
+ - SpeechTurn_segmentation
+ - Speaker_diarization
+ - Face_segmentation
+ - SpeakingFace_segmentation
+ - Face_clustering
+ - SpeakingFace_clustering
+ - SpeechTurn_Face_clustering
+ - SpeechTurn_SpeakingFace_clustering
+ - Distance_SpeechTurn_vs_SpeechTurn
+ - Distance_Face_vs_Face
+ - Distance_SpeakingFace_vs_SpeakingFace
+ - Distance_SpeechTurn_vs_SpeakingFace
+ - Fusion_baseline1
+ - Fusion_baseline2
 
-# GitHub: 
-
+## Source code automatic system
  - README.md
- - Evaluation_tools
-   + Shot_annotation_to_ranking.py
-   + eval_MMAP.py
-   + xgtf_trs_to_shot_ref.py
- - automatic_annotation_on_raw_video
-   + Shot_segmentation
-   + Video_OCR
-   + ASR
-   + Spoken_name
-   + SpeechTurn_segmentation
-   + Speaker_diarization
-   + Face_segmentation
-   + SpeakingFace_segmentation
-   + Face_clustering
-   + SpeakingFace_clustering
-   + SpeechTurn_SpeakingFace_clustering
-   + Distance_SpeechTurn_vs_SpeechTurn
-   + Distance_Face_vs_Face
-   + Distance_SpeakingFace_vs_SpeakingFace
-   + Distance_SpeechTurn_vs_SpeakingFace
-   + Fusion_baseline1
-   + Fusion_baseline2
- - Automatic_system_source_code
-   + README.md
+ - Fusion_baseline_system
+   + Fusion_baseline1.py
+   + Fusion_baseline2.py
+ - sub-component
    + 1_Shot
      * 1_extract_descriptor.py
      * 2_segmentation.py
@@ -78,17 +81,16 @@ mediaeval data
      * 6_learn_model_normalisation.py
      * 7_Compute_matrix_distance_Face_vs_Face.py
    + 4_SpeakingFace
-     * 1_extract_descriptor.py
-     * 2_learn_selection_model.py
-     * 3_selection.py
-     * 4_descriptor_SpeechTurn_vs_SpeakingFace.py
+     * 1_extract_descriptor_of_SpeakingFace.py
+     * 2_learn_model_for_selection_of_SpeakingFace.py
+     * 3_select_SpeakingFace.py
+     * 4_extract_descriptor_SpeechTurn_vs_SpeakingFace.py
      * 5_learn_model_distance_SpeechTurn_vs_SpeakingFace.py
      * 6_Compute_matrix_distance_SpeechTurn_vs_SpeakingFace.py
-   + 5_Video_OCR
-     * LOOV
-     * Find_Title_Boxes.py
-     * Merge_multiple_transcriptions.py
-     * Extract_name_write_in_a_title_boxes.py
+   + 5_OverlaidName
+     * 1_LOOV
+     * 2_merge_multiple_transcriptions.py
+     * 3_extract_OverlaidName_segmentation.py
    + 6_evaluation
      * eval_speech_nonspeech_segmentation.py
      * eval_speech_turn_segmentation.py
