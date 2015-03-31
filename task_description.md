@@ -122,12 +122,14 @@ https://hal.archives-ouvertes.fr/hal-01060827/document
 
 ## Task schedule
 
- - 1 April: Development data release
- - 1 May: Test data release
- - 1 July: Run submission and start of collaborative annotation
- - 15 August: End of collaborative annotation and scoring of systems
+ - 1 May: Development data release
+ - 1 June: Test data release
+ - 1 July: Dead line submissions
+ - 1-22 July: collaborative annotation
+ - 22-29 July: Adjudication
+ - 1 August: Official result
  - 28 August: Working notes paper deadline
- - 14-15 September MediaEval 2015 Workshop
+ - 14-15 September: MediaEval 2015 Workshop
 
 ## Acknowledgments
 
