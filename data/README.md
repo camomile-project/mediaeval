@@ -1,33 +1,116 @@
 mediaeval data
 ==============
 
+# Package REPERE (FTP or HD)
 
-## Manual (10h on test set):
+ - README.md
+ - Data
+   + Video_AVI
+   + Video_MPEG
+   + Audio_wave
+   + idx
+ - Groundtruth
+   + trs
+   + xgtf
+   + mdtm
+   + shot_ref
+ - uri_list
+   + uri.train1.lst
+   + uri.train2.lst
+   + uri.dev1.lst
+   + uri.dev2.lst
+   + uri.test1.lst
+   + uri.test2.lst
 
-### Audio
- - Speech transcription
- - Tag on person name pronounced
- - Speech segmentation
- - Speaker identification 
+# GitHub: 
 
-### Visual (only 1 image / 10 seconds)
- - Spatial face detection
- - Overlaid text transcription
- - Tag on person names in OCR 
- - Tag on person names in OCR in a title box
- - Face identification
+ - README.md
+ - Evaluation_tools
+   + Shot_annotation_to_ranking.py
+   + eval_MMAP.py
+   + xgtf_trs_to_shot_ref.py
+ - automatic_annotation_on_raw_video
+   + Shot_segmentation
+   + Video_OCR
+   + ASR
+   + Spoken_name
+   + SpeechTurn_segmentation
+   + Speaker_diarization
+   + Face_segmentation
+   + SpeakingFace_segmentation
+   + Face_clustering
+   + SpeakingFace_clustering
+   + SpeechTurn_SpeakingFace_clustering
+   + Distance_SpeechTurn_vs_SpeechTurn
+   + Distance_Face_vs_Face
+   + Distance_SpeakingFace_vs_SpeakingFace
+   + Distance_SpeechTurn_vs_SpeakingFace
+   + Fusion_baseline1
+   + Fusion_baseline2
+ - Automatic_system_source_code
+   + README.md
+   + 1_Shot
+     * 1_extract_descriptor.py
+     * 2_segmentation.py
+   + 2_SpeechTurn
+     * 1_learn_model_speech_nonspeech.py
+     * 2_speech_nonspeech_segmentation.py
+     * 3_speech_turn_segmentation.py
+     * 4_linear_clustering.py
+     * 5_Compute_BIC_distance.py
+     * 6_learn_model_normalisation.py
+     * 7_Compute_matrix_distance_SpeechTurn_vs_SpeechTurn.py  
+   + 3_Face
+     * 1_detection.py
+     * 2_tracking.py
+     * 3_extract_flandmark
+       - landmarks_detection.cpp
+       - CMakeLists.txt
+       - libflandmark
+         + flandmark_detector.cpp
+         + flandmark_detector.h
+         + liblbp.cpp
+         + liblbp.h
+         + msvc-compat.h
+         + CMakeLists.txt
+     * 4_extract_HoG_descriptor.py
+     * 5_project_HOG_descriptor_by_LDML.py
+     * 6_learn_model_normalisation.py
+     * 7_Compute_matrix_distance_Face_vs_Face.py
+   + 4_SpeakingFace
+     * 1_extract_descriptor.py
+     * 2_learn_selection_model.py
+     * 3_selection.py
+     * 4_descriptor_SpeechTurn_vs_SpeakingFace.py
+     * 5_learn_model_distance_SpeechTurn_vs_SpeakingFace.py
+     * 6_Compute_matrix_distance_SpeechTurn_vs_SpeakingFace.py
+   + 5_Video_OCR
+     * LOOV
+     * Find_Title_Boxes.py
+     * Merge_multiple_transcriptions.py
+     * Extract_name_write_in_a_title_boxes.py
+   + 6_evaluation
+     * eval_speech_nonspeech_segmentation.py
+     * eval_speech_turn_segmentation.py
+     * align_speechTurn_to_reference.py
+     * eval_face_detection.py
+     * eval_facetracks.py
+     * align_faceTracks_to_reference.py
+     * eval_matrix_distance.py
+   + Model
+     * Speech_nonspeech.model
+     * Normalisation_BIC_distance.model
+     * haarcascade_frontalface_default.xml
+     * flandmark_model.dat
+     * LDML.model
+     * Normalisation_l2_distance.model
+     * SpeakingFace_selection.model
+     * SpeechTurn_vs_SpeakingFace_distance.model
+     * Model_title_box_BFMSTORY1.png
+     * Model_title_box_BFMSTORY2.png
+     * Model_title_box_...
+     * Model_title_box_INA1.png 
+   
 
-## Automatic (full test set):
 
-### Audio
-- Speaker diarization
-- Automatic speech transcription
-- Named entity detection in ASR
-
-### Visual
-- Shot segmentation
-- Face detection and tracking
-- Face diarization
-- Optical character recognition
-- Named entity detection for OCR in title box
 
