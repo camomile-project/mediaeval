@@ -10,6 +10,7 @@ mediaeval data
  - Proposal.md
 
 ## Metric
+ - README.md
  - Reference_shot.ref
  - Reference_evidence.ref
  - Hypothesis_baseline1.hyp
@@ -48,24 +49,21 @@ mediaeval data
 
 ## Source code automatic system
  - README.md
- - Fusion_baseline_system
+ - FusionBaselineSystem
    + Fusion_baseline1.py
    + Fusion_baseline2.py
- - sub-component
-   + 1_Shot
-     * 1_extract_descriptor.py
-     * 2_segmentation.py
+ - SubComponent
    + 2_SpeechTurn
      * 1_learn_model_speech_nonspeech.py
      * 2_speech_nonspeech_segmentation.py
      * 3_speech_turn_segmentation.py
-     * 4_linear_clustering.py
-     * 5_Compute_BIC_distance.py
-     * 6_learn_model_normalisation.py
-     * 7_Compute_matrix_distance_SpeechTurn_vs_SpeechTurn.py  
+     * 4_linear_bic_clustering.py
+     * 5_compute_BIC_matrix.py
+     * 6_learn_normalisation_model.py
+     * 7_normalisation_matrix.py
    + 3_Face
-     * 1_detection.py
-     * 2_tracking.py
+     * 1_face_detection.py
+     * 2_face_tracking.py
      * 3_extract_flandmark
        - landmarks_detection.cpp
        - CMakeLists.txt
@@ -76,10 +74,8 @@ mediaeval data
          + liblbp.h
          + msvc-compat.h
          + CMakeLists.txt
-     * 4_extract_HoG_descriptor.py
-     * 5_project_HOG_descriptor_by_LDML.py
-     * 6_learn_model_normalisation.py
-     * 7_Compute_matrix_distance_Face_vs_Face.py
+     * 4_face_HoG_descriptor.py
+     * 5_compute_hvh_matrix.py
    + 4_SpeakingFace
      * 1_extract_descriptor_of_SpeakingFace.py
      * 2_learn_model_for_selection_of_SpeakingFace.py
