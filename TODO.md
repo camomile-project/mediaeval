@@ -1,10 +1,8 @@
 # TODO list
 
-## Inscription (avant le 28/02)
+## Inscription (avant le 1/05)
 - Site web / forum pour les participants -> voir réponse de Martha
 - Répondre aux questions du sondage
-- Nom d'un interlocuteur pour ELDA dans le short proposal
-- Compléter le fichier task_description
 
 ## Données (avant le 1/05)
 
@@ -15,9 +13,7 @@
 
 - Récupérer les vidéos INA et AGORA
 	* INA : attendre le serveur Quaero
-	* AGORA : 
-		+ Johann : j'ai créer un compte sur metashare mais il est noté comme désactivé, j'ai envoyé un mail à Javier pour lui demander quoi faire
-		+ Réponse de Ramon : We still did not upload the Agora data. We are planning to do so as soon as possible. I will inform you later this week.
+	* AGORA : en attend de l'accord pour les droits
 - Vérifier le protocole pour les futurs participants (lien, documents à remplir)
 - Pré-traiter les corpus REPERE, INA et AGORA
 	* INA et AGORA : 
@@ -67,24 +63,7 @@
 	4. Retour au 1. avec les nouvelles annotations en entrées en plus
 
 ## Evaluation
-- Choisir le format des données entrées / sorties (**avant le 28/02**)
 - Script d'extraction des annotations fournies (REPERE, ...) vers des annotations en plan (**avant le 01/05**)
-- Script de classement des plans indéxés  (**avant le 1/05**)
-    * En Entrée : requête (nom, date), et la liste des plans annotés par un participant
-    * En Sortie : Liste ordonnée de plan
-    * Process : 
-    	1. Recherche des noms proposés proche du noms de la requête
-    	2. Classement des plans des noms proches en fonction du score de confiance associé
-- Script d'évaluation  (**avant le 1/05**)
-	* En Entrée : pour chaque requête (nom, date) : une liste de plan ordonnée et les plans annotés correspondants
-	* En Sortie : score MMAP@n
-	* Process : 
-		1. On calcul de la precision moyenne à n pour une requête (nom, date), avec P(k) qui est égale à la précision des kième premiers éléments de la liste :
-$$ ap@n = \sum_{k=1}^n P(k) / min(m, n)  $$
-		2. On calcul la MAP@n pour une personne sur V vidéos où elle apparait :
-$$ MAP@n = \sum_{v=1}^V ap@n_v / V $$
-		3. On calcul la MMAP@n total sur l'ensemble des personnes:
-$$ MMAP@n = \sum_{i=1}^N MAP@n_i / N $$
 - Interface/script de soumission (avec possibilité de modification des soumissions) (**avant le 01/06**)
 - Interface d'adjudication: (**avant le 1/08**)
 	* Dans l'interface, afficher une vidéo + timeline avec la diff entre la référence et la soumission
