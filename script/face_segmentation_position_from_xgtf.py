@@ -10,7 +10,6 @@ output_path_position = sys.argv[4]
 
 for path in open(uri_lst).read().splitlines():
     video, wave_file, video_avi_file, video_mpeg_file, trs_file, xgtf_file, idx_file = path.split(' ')
-
     print video
 
     frame2time = IDXHack(data_path+'/'+idx_file)
@@ -46,7 +45,7 @@ for path in open(uri_lst).read().splitlines():
                     if len(att.getElementsByTagName('data:dvalue')) != 0:
                         endFrame = att.getElementsByTagName('data:dvalue')[0].getAttribute('value')
 
-            fout_position.write(startFrame+' '+endFrame+' '+framespan.split(':')[0]+' '+name.lower().replace('-', '_')+' ')
+            fout_position.write(startFrame+' '+endFrame+' '+framespan.split(':')[0]+' '+name.lower().replace('-', '_').replace(' ', '_')+' ')
             if l_pts == []:
                 fout_position.write('?:?')
             else:
@@ -61,7 +60,7 @@ for path in open(uri_lst).read().splitlines():
             fout_seg.write(video)
             fout_seg.write(' %09.3f %09.3f' % (startTime, endTime))
             fout_seg.write(' %07d %07d' % (int(startFrame), int(endFrame)))
-            fout_seg.write(' '+name.lower().replace('-', '_'))
+            fout_seg.write(' '+name.lower().replace('-', '_').replace(' ', '_'))
             fout_seg.write('\n')
 
     fout_position.close()

@@ -45,7 +45,7 @@ for path in open(uri_lst).read().splitlines():
             if cartouche == 'true':
                 startTime = frame2time(int(startFrame), -1.0)
                 endTime = frame2time(int(endFrame), -1.0)
-                l_ocr.append([video, startFrame, endFrame, startTime, endTime, name.lower().replace('-', '_')])
+                l_ocr.append([video, startFrame, endFrame, startTime, endTime, name.lower().replace('-', '_').replace(' ', '_')])
 
     if l_ocr != []:
         fout_seg = open(output_path_seg+'/'+video+'.vtseg','w')
