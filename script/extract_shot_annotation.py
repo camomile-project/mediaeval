@@ -36,7 +36,7 @@ for line in open(video_list):
         for spoken in spokens_tmp.get_labels(seg_spoken):
             spokens[segment] = spoken
 
-    fout = open(output_path+'/'+video+'.shot', 'w')
+    fout = open(output_path+'/'+video+'.ref', 'w')
     for seg_shot in shots.get_timeline():
         shot = list(shots.get_labels(seg_shot))[0]
         l_spk = set([])
@@ -54,21 +54,24 @@ for line in open(video_list):
         for name in l_spk & l_face:
             if 'BFMTV_' not in name and 'LCP_' not in name:
                 evidence = 'false'
+                evidenceSource = 'na'
                 for seg_ocr in OCR.get_timeline():
                     if seg_shot & seg_ocr:
                         for ocr in OCR.get_labels(seg_ocr):
                             if ocr == name :
-                                evidence = 'true_ocr'
+                                evidence = 'true'
+                                evidenceSource = 'image'
 
                 for seg_spoken in spokens.get_timeline():
                     if seg_shot & seg_spoken:
                         for spoken in spokens.get_labels(seg_spoken):
                             if spoken == name :
-                                if evidence:
-                                    evidence += '_asr'
+                                if evidence == 'true':
+                                    evidenceSource = 'both'
                                 else:
-                                    evidence = 'true_asr'
+                                    evidence = 'true'
+                                    evidenceSource = 'audio'
 
-                fout.write(video+' '+shot+' '+name+' '+evidence+'\n')
+                fout.write(video+' '+shot+' '+name+' '+evidence+' '+evidenceSource+'\n')
 
     fout.close()
