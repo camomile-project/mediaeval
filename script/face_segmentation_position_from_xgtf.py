@@ -46,7 +46,7 @@ for path in open(uri_lst).read().splitlines():
                     if len(att.getElementsByTagName('data:dvalue')) != 0:
                         endFrame = att.getElementsByTagName('data:dvalue')[0].getAttribute('value')
 
-            fout_position.write(startFrame+' '+endFrame+' '+framespan.split(':')[0]+' '+name+' ')
+            fout_position.write(startFrame+' '+endFrame+' '+framespan.split(':')[0]+' '+name.lower().replace('-', '_')+' ')
             if l_pts == []:
                 fout_position.write('?:?')
             else:
