@@ -2,7 +2,7 @@ import glob, sys, os
 from pyannote.parser import MDTMParser
 from pyannote.core import Annotation, Segment
 
-video_list = sys.argv[1]
+uri_lst = sys.argv[1]
 shot_seg_path = sys.argv[2]
 face_seg_path = sys.argv[3]
 spk_seg_path = sys.argv[4]
@@ -11,8 +11,23 @@ Spoken_seg_path = sys.argv[6]
 output_path = sys.argv[7]
 marging_spoken = int(sys.argv[8])
 
-for line in open(video_list):
-    video = line.split('\t')[0]
+def parser_vtseg(f, video):
+    anno = Annotation(uri=video)
+    for line in open(f):
+        video, startTime, endTime, startFrame, endFrame, name = line[:-1].split(' ')
+        segment = Segment(start=float(startTime), end=float(endTime))
+        anno[segment] = name
+    return anno
+
+def parser_atseg(f, video):
+    anno = Annotation(uri=video)
+    for line in open(f):
+        video, startTime, endTime, name = line[:-1].split(' ')
+        segment = Segment(start=float(startTime), end=float(endTime))
+        anno[segment] = name
+    return anno
+
+for video in open(uri_lst).read().splitlines():
     print video
 
     shots = Annotation(uri=video, modality='shot')
@@ -21,20 +36,21 @@ for line in open(video_list):
         segment = Segment(start=float(startTime), end=float(endTime))
         shots[segment] = shotID
 
-    faces = MDTMParser().read(face_seg_path+'/'+video+'.mdtm')(uri=video, modality="head")
-    speakers = MDTMParser().read(spk_seg_path+'/'+video+'.mdtm')(uri=video, modality="speaker")
+    faces = parser_vtseg(face_seg_path+'/'+video+'.vtseg', video)
+    speakers = parser_atseg(spk_seg_path+'/'+video+'.atseg', video)
 
     OCR = Annotation(uri=video, modality='written')
-    if os.path.isfile(OCR_seg_path+'/'+video+'.mdtm'):
-        OCR = MDTMParser().read(OCR_seg_path+'/'+video+'.mdtm')(uri=video, modality="written")
+    if os.path.isfile(OCR_seg_path+'/'+video+'.vtseg'):
+        OCR = parser_vtseg(OCR_seg_path+'/'+video+'.vtseg', video)
 
     spokens = Annotation(uri=video, modality='spoken')
-    if os.path.isfile(Spoken_seg_path+'/'+video+'.mdtm'):
-        spokens_tmp = MDTMParser().read(Spoken_seg_path+'/'+video+'.mdtm')(uri=video, modality="spoken")
-    for seg_spoken in spokens_tmp.get_timeline():
-        segment = Segment(start=float(seg_spoken.start-marging_spoken), end=float(seg_spoken.end+marging_spoken))
-        for spoken in spokens_tmp.get_labels(seg_spoken):
-            spokens[segment] = spoken
+    if os.path.isfile(Spoken_seg_path+'/'+video+'.atseg'):
+        spokens_tmp = parser_atseg(Spoken_seg_path+'/'+video+'.atseg', video)
+
+        for seg_spoken in spokens_tmp.get_timeline():
+            segment = Segment(start=float(seg_spoken.start-marging_spoken), end=float(seg_spoken.end+marging_spoken))
+            for spoken in spokens_tmp.get_labels(seg_spoken):
+                spokens[segment] = spoken
 
     fout = open(output_path+'/'+video+'.ref', 'w')
     for seg_shot in shots.get_timeline():
