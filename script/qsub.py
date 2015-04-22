@@ -48,11 +48,11 @@ if __name__ == '__main__':
     face_l2_mat = metaData+'SubComponent/Face/l2_matrix/'
     face_proba_mat = metaData+'SubComponent/Face/proba_matrix/'
 
-    speech_seg = metaData+'SubComponent/SpeeechTurn/speech_nonspeech_segmentation/'
-    st_seg = metaData+'SubComponent/SpeeechTurn/speech_turn_segmentation/'
-    linear_BIC_clus = metaData+'SubComponent/SpeeechTurn/linear_BIC_clustering/'
-    BIC_matrix = metaData+'SubComponent/SpeeechTurn/BIC_matrix/'
-    st_proba_mat = metaData+'SubComponent/SpeeechTurn/proba_matrix/'
+    speech_seg = metaData+'SubComponent/SpeechTurn/speech_nonspeech_segmentation/'
+    st_seg = metaData+'SubComponent/SpeechTurn/speech_turn_segmentation/'
+    linear_BIC_clus = metaData+'SubComponent/SpeechTurn/linear_BIC_clustering/'
+    BIC_matrix = metaData+'SubComponent/SpeechTurn/BIC_matrix/'
+    st_proba_mat = metaData+'SubComponent/SpeechTurn/proba_matrix/'
 
     array_file = mediaevalRepo+'script/tmp/array_'+process+'.sh'
     file_out_list  = mediaevalRepo+'script/tmp/list_'+process
