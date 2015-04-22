@@ -93,7 +93,7 @@ if __name__ == '__main__':
     elif process == 'speech_seg':
         cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/2_speech_nonspeech_segmentation.py'"
         for videoID in videoID_lst:
-            lines.append(dataPath[videoID]['wave']+" "+SourceCodeSystem+"SubComponent/Model/model_speech_nonspeech_256gauss "+speech_seg+videoID+".mdtm")
+            lines.append(videoID+" "+dataPath[videoID]['wave']+" "+SourceCodeSystem+"SubComponent/Model/model_speech_nonspeech_256gauss "+speech_seg+videoID+".mdtm")
 
     elif process == 'st_seg':
         cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/3_speech_turn_segmentation.py'"
