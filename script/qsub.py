@@ -59,22 +59,22 @@ if __name__ == '__main__':
     lines = []
 
     if process == 'shot_desc':
-        cde = "python '"+mediaevalRepo+"shot_descriptor.py'"
+        cde = "python '"+mediaevalRepo+"shot_descriptor.py '"
         for videoID in videoID_lst:
             lines.append(dataPath[videoID]['avi']+" "+shot_desc+videoID+".desc --idx="+dataPath[videoID]['idx'])
 
     elif process == 'shot_seg':
-        cde = "python '"+mediaevalRepo+"shot_segmentation.py'"
+        cde = "python '"+mediaevalRepo+"shot_segmentation.py '"
         for videoID in videoID_lst:
             lines.append(videoID+" "+shot_desc+videoID+".desc "+shot_seg+videoID+".shot --min_duration=2 --uem="+segmentUEM)
 
     elif process == 'face_detection':
-        cde = "python '"+SourceCodeSystem+"SubComponent/Face/1_face_detection.py'"
+        cde = "python '"+SourceCodeSystem+"SubComponent/Face/1_face_detection.py '"
         for videoID in videoID_lst:
             lines.append(dataPath[videoID]['avi']+" "+face_detection+videoID+".face "+SourceCodeSystem+"SubComponent/Model/haarcascade_frontalface_default.xml --shot_segmentation="+shot_seg+videoID+'.shot')
 
     elif process == 'face_tracking':
-        cde = "python '"+SourceCodeSystem+"SubComponent/Face/2_face_tracking.py'"
+        cde = "python '"+SourceCodeSystem+"SubComponent/Face/2_face_tracking.py '"
         for videoID in videoID_lst:
             lines.append(dataPath[videoID]['avi']+" "+shot_seg+videoID+".shot "+face_detection+videoID+".face "+face_tracking+videoID+".facetrack "+facetracks_seg+videoID+".seg --idx="+dataPath[videoID]['idx'])
 
@@ -83,35 +83,35 @@ if __name__ == '__main__':
 
 
     # elif process == 'face_desc':
-    #     cde = "python '"+SourceCodeSystem+"SubComponent/Face/4_face_HoG_descriptor.py'"
+    #     cde = "python '"+SourceCodeSystem+"SubComponent/Face/4_face_HoG_descriptor.py '"
 
 
     # elif process == 'l2_mat':
-    #     cde = "python '"+SourceCodeSystem+"SubComponent/Face/5_compute_hvh_matrix.py'"
+    #     cde = "python '"+SourceCodeSystem+"SubComponent/Face/5_compute_hvh_matrix.py '"
 
 
     elif process == 'speech_seg':
-        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/2_speech_nonspeech_segmentation.py'"
+        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/2_speech_nonspeech_segmentation.py '"
         for videoID in videoID_lst:
             lines.append(dataPath[videoID]['wave']+" "+SourceCodeSystem+"SubComponent/Model/model_speech_nonspeech_256gauss "+speech_seg+videoID+".mdtm")
 
     elif process == 'st_seg':
-        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/3_speech_turn_segmentation.py'"
+        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/3_speech_turn_segmentation.py '"
         for videoID in videoID_lst:
             lines.append(videoID+" "+dataPath[videoID]['wave']+" "+speech_seg+videoID+".mdtm "+st_seg+videoID+".mdtm")
 
     elif process == 'linear_BIC_clus':
-        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/4_linear_bic_clustering.py'"
+        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/4_linear_bic_clustering.py '"
         for videoID in videoID_lst:
             lines.append(videoID+" "+dataPath[videoID]['wave']+" "+st_seg+videoID+".mdtm "+linear_BIC_clus+videoID+".mdtm")
 
     elif process == 'BIC_mat':
-        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/.py'"
+        cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/.py '"
         for videoID in videoID_lst:
             lines.append(videoID+" "+dataPath[videoID]['wave']+" "+linear_BIC_clus+videoID+".mdtm "+BIC_matrix+videoID+".mat")
 
     # elif process == 'st_proba_mat':
-    #     cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/.py'"
+    #     cde = "python '"+SourceCodeSystem+"SubComponent/SpeechTurn/.py '"
 
 
 
