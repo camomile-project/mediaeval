@@ -54,8 +54,8 @@ if __name__ == '__main__':
     BIC_matrix = metaData+'SubComponent/SpeeechTurn/BIC_matrix/'
     st_proba_mat = metaData+'SubComponent/SpeeechTurn/proba_matrix/'
 
-    array_file = 'tmp/array_'+process+'.sh'
-    file_out_list  = 'tmp/list_'+process
+    array_file = mediaevalRepo+'script/tmp/array_'+process+'.sh'
+    file_out_list  = mediaevalRepo+'script/tmp/list_'+process
     lines = []
 
     if process == 'shot_desc':
@@ -127,7 +127,7 @@ if __name__ == '__main__':
         fout_list.write(line+'\n')
     fout_list.close() 
 
-    #os.popen('qsub -S /bin/bash -V -j y -tc '+str(nb_concurrent_jobs)+' -t 1:'+str(len(lines))+' '+array_file+' '+file_out_list)
+    os.popen('qsub -S /bin/bash -V -j y -tc '+str(nb_concurrent_jobs)+' -t 1:'+str(len(lines))+' '+array_file+' '+file_out_list)
 
 
 
