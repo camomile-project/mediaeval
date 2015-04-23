@@ -47,7 +47,7 @@ for path in open(uri_lst).read().splitlines():
                 if att.getAttribute('name') == 'TETE':
                     if len(att.getElementsByTagName('data:polygon')) != 0:
                         for pts in att.getElementsByTagName('data:polygon')[0].getElementsByTagName('data:point'):
-                            l_pts.append([int(pts.getAttribute('x'))/h_size*h_size_opencv, int(pts.getAttribute('y'))])
+                            l_pts.append([int(round(float(pts.getAttribute('x'))/float(h_size)*float(h_size_opencv), 0)), int(pts.getAttribute('y'))])
 
                 if att.getAttribute('name') == 'STARTFRAME':
                     if len(att.getElementsByTagName('data:dvalue')) != 0:
