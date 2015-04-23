@@ -7,6 +7,8 @@ uri_lst = sys.argv[1]
 data_path = sys.argv[2]
 output_path_seg = sys.argv[3]
 output_path_position = sys.argv[4]
+h_size_opencv = 1024
+
 
 for path in open(uri_lst).read().splitlines():
     video, wave_file, video_avi_file, video_mpeg_file, trs_file, xgtf_file, idx_file = path.split(' ')
@@ -16,6 +18,16 @@ for path in open(uri_lst).read().splitlines():
     fout_position = open(output_path_position+'/'+video+'.position','w')
     fout_seg = open(output_path_seg+'/'+video+'.vtseg','w')
     xgtf = minidom.parse(data_path+'/'+xgtf_file)
+
+
+    h_size = 720
+    for obj in xgtf.getElementsByTagName('file'):
+        if obj.getAttribute('name') == 'Information':
+            for att in obj.getElementsByTagName('attribute'):
+                if att.getAttribute('name') == 'H-FRAME-SIZE':
+                    if len(att.getElementsByTagName('data:dvalue')) != 0:
+                        h_size = int(att.getElementsByTagName('data:dvalue')[0].getAttribute('value'))
+
     for obj in xgtf.getElementsByTagName('object'):
         if obj.getAttribute('name') == 'PERSONNE':
             name ='?'
@@ -35,7 +47,7 @@ for path in open(uri_lst).read().splitlines():
                 if att.getAttribute('name') == 'TETE':
                     if len(att.getElementsByTagName('data:polygon')) != 0:
                         for pts in att.getElementsByTagName('data:polygon')[0].getElementsByTagName('data:point'):
-                            l_pts.append([int(pts.getAttribute('x')), int(pts.getAttribute('y'))])
+                            l_pts.append([int(pts.getAttribute('x'))/h_size*h_size_opencv, int(pts.getAttribute('y'))])
 
                 if att.getAttribute('name') == 'STARTFRAME':
                     if len(att.getElementsByTagName('data:dvalue')) != 0:
