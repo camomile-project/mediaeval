@@ -1,22 +1,20 @@
 # StoryBoard
 
-## Annotation des preuves OCR
+## Written names evidence annotation
 
-#### Informations en entrées : 
- - nom de la personne
- - nom de la vidéo 
- - timestamp où le nom est écrit à l'écran
- - timestamp où apparait la personne (identique au précédent ???)
+#### Input data: 
+ - Person name
+ - VideoID 
+ - ShotID
  
-#### Scénario :
- - On affiche le nom de la personne correspondant à la preuve.
- - On affiche la vidéo où le nom est écrit à l'écran, calée sur le timestamp fourni.
- - On affiche la vidéo où apparait la personne, calée sur le timestamp fourni.
- - On demande à l'utilisateur de cliquer sur le visage correspondant au nom.
- - Si l'annotateur ne voit pas la personne correspondante dans l'image affichée, elle peut lire le plan de la vidéo pour trouver une meilleur image.
- - Si elle ne trouve pas la personne, elle clique sur un bouton.
- - Correction du nom de la personne ???
-
+#### Scenario :
+ - We write the name of the person used as evidence
+ - We show shot of the video
+ - We ask to the user:
+   * to correct the name
+   * to draw a square on the face
+   * to click on a button to validate the annotation or to reject the annotation
+ 
 ![OCR](OCR.png)
 
 
