@@ -1,5 +1,7 @@
 # StoryBoard
 
+The goal is to corrected submission of participants. We want to split the process in multiple sub annotation
+
 ## Written names evidence annotation
 
 #### Input data: 
@@ -9,7 +11,7 @@
  
 #### Scenario :
  - We write the name of the person used as evidence
- - We show shot of the video
+ - We show shot of the video to annotate
  - We ask to the user:
    * to correct the name
    * to draw a square on the face
@@ -18,18 +20,20 @@
 ![OCR](OCR.png)
 
 
-## Annotation des preuves ASR
+## Pronounced names annotation
 
-#### Informations en entrées : 
- - nom de la personne
- - nom de la vidéo 
- - timestamp où le nom est prononcé
- - timestamp où apparait la personne (proche du précédent ???)
- - La phrase prononcée et le nom taggé
+#### Input data: 
+ - Person name
+ - VideoID 
+ - ShotID
 
-#### Scénario :
- - On affiche le nom de la personne correspondant à la preuve.
- - On affiche le segment vidéo où le nom est prononcé, calée sur le timestamp fourni -10 secondes.
+#### Scenario :
+ - We write the name of the person used as evidence
+ - We show shot of the video +/- 5 seconds to annotate
+ - Th  noatator play the vide
+
+
+
  - On affiche la segment vidéo où apparait la personne, calée sur le timestamp fourni.
  - On joue la vidéo pendant 20 secondes pour vérifier si le bon nom a été prononcé
  - On demande à l'utilisateur de cliquer sur le visage correspondant au nom.
@@ -42,11 +46,11 @@
  
 ## Vérification de l'identité des visages
 
-#### Informations en entrées : 
+#### Input data: 
  - Une image d'un visage
  - Une liste de plan de vidéos
 
-#### Scénario :
+#### Scenario :
 - On affiche l'image d'une preuve + un nom.
 - On affiche une liste d'imagettes correspondant au centre de chacun des plans à annoter pour une vidéo.
 - Si la personne correspondante est visible, l'annotateur clique sur son visage.
@@ -57,10 +61,10 @@
 
 ## Vérification si les visages parlent
 
-#### Informations en entrées : 
+#### Input data: 
  - Un plan d'une vidéo
 
-#### Scénario :
+#### Scenario :
 - On affiche un plan avec un visage entouré (celui sur lequel l'annotateur a cliqué dans l'étape précédente).
 - L'annotateur joue la vidéo est vérifie si la personne parle dans le plan.
 
