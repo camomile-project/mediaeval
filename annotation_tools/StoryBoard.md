@@ -1,73 +1,52 @@
 # StoryBoard
 
-The goal is to corrected submission of participants. We want to split the process in multiple sub annotation
+The goal is to correct submissions of participants. The process is devided into multiple annotation tasks
 
-## Written names evidence annotation
+## Evidences annotation
 
-#### Input data: 
+#### Input datas: 
  - Person name
- - VideoID 
- - ShotID
+ - A shot of a video
+ - Evidence type (audio for pronounced names, video for written names)
  
 #### Scenario :
- - We write the name of the person used as evidence
- - We show shot of the video to annotate
- - We ask to the user:
-   * to correct the name
+ - Show the name of the person used as evidence
+ - Show the shot of the video to annotate (+/- 5 seconds for audio evidence)
+ - Ask to the annotator:
+   * to play the video to find the evidence
+   * to correct the name if needed
    * to draw a square on the face
-   * to click on a button to validate the annotation or to reject the annotation
+   * to click on a button to validate or reject the annotation (if there is no written name or pronounced name corresponding to the person name)
  
 ![OCR](OCR.png)
 
-
-## Pronounced names annotation
-
-#### Input data: 
- - Person name
- - VideoID 
- - ShotID
-
-#### Scenario :
- - We write the name of the person used as evidence
- - We show shot of the video +/- 5 seconds to annotate
- - Th  noatator play the vide
-
-
-
- - On affiche la segment vidéo où apparait la personne, calée sur le timestamp fourni.
- - On joue la vidéo pendant 20 secondes pour vérifier si le bon nom a été prononcé
- - On demande à l'utilisateur de cliquer sur le visage correspondant au nom.
- - Si l'annotateur ne voit pas la personne correspondante dans l'image affiché, elle peut lire le plan de la vidéo pour trouver une meilleur image.
- - Si elle ne trouve pas la personne, elle clique sur un bouton.
- - Correction du nom de la personne ???
- 
- ![ASR](ASR.png)
-
- 
-## Vérification de l'identité des visages
+## Verification of face identities
 
 #### Input data: 
- - Une image d'un visage
- - Une liste de plan de vidéos
+ - Image of the face corresponding to an evidence (provide by the previous step)
+ - List of shots
 
 #### Scenario :
-- On affiche l'image d'une preuve + un nom.
-- On affiche une liste d'imagettes correspondant au centre de chacun des plans à annoter pour une vidéo.
-- Si la personne correspondante est visible, l'annotateur clique sur son visage.
-- Si la personne n'est pas visible, l'annotateur peut chercher une meilleur image dans le plan en lisant la vidéo.
-- Si la personne n'apparait pas dans le plan, elle clique sur un bouton.
+- Show the evidence on the left side
+- Show a list of shot of video to be annoted on the right side
+- Ask to the annotator for each shot selected:
+   * To play the shot
+   * To draw a square around the face corresponding to the evidence
+   * Or to click on a button to reject the shot if the person don't appear
 
  ![Face](Face.png)
 
-## Vérification si les visages parlent
+## Verification of speaking face
 
 #### Input data: 
- - Un plan d'une vidéo
+ - A shot of a video
+ - A face selected (provide by the previous step)
 
 #### Scenario :
-- On affiche un plan avec un visage entouré (celui sur lequel l'annotateur a cliqué dans l'étape précédente).
-- L'annotateur joue la vidéo est vérifie si la personne parle dans le plan.
-
-On peut utiliser un classifieur pour savoir si le visage parle ou non, et l'on annote manuellement que les cas négatifs ou limites
+- Show the shot of the video
+- Draw a square on the face selected
+- Ask to the annotator:
+   * To play the shot
+   * To click on a button to validate that is a speaking face or not 
 
  ![Speaking_face](Speaking_face.png)
