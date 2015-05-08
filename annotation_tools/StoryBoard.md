@@ -4,49 +4,50 @@ The goal is to correct submissions of participants. The process is devided into 
 
 ## Evidences annotation
 
-#### Input datas: 
+#### Input data: 
  - Person name
  - A shot of a video
- - Evidence type (audio for pronounced names, video for written names)
+ - Evidence type (audio for pronounced names, image for written names)
+ - Already corrected name near from the person name
  
-#### Scenario :
- - Show the name of the person used as evidence
- - Show the shot of the video to annotate (+/- 5 seconds for audio evidence)
- - Ask to the annotator:
-   * to play the video to find the evidence
-   * to correct the name if needed
-   * to draw a square on the face
-   * to click on a button to validate or reject the annotation (if there is no written name or pronounced name corresponding to the person name)
- 
+#### Scenario:
+ - Show the person name
+ - Show the shot of the video to be annotated (+/- 5 seconds for audio evidence)
+ - Ask to the annotator to:
+   + Play the video to find the evidence
+   + Correct the name if needed
+   + Draw a bounding box on the face
+   + Select the best timestamp for the annotation (when the face is the more front)
+   + Validate or reject the annotation (if there is no written name or pronounced name corresponding to the person name)
+ - What happens behind after validation:
+   + If not existing, create the mapping layer between the evidence submission and the corrected name
+   + Add the mapping if it not exists
+
 ![OCR](OCR.png)
 
-## Verification of face identities
-
-#### Input data: 
- - Image of the face corresponding to an evidence (provide by the previous step)
- - List of shots
-
-#### Scenario :
-- Show the evidence on the left side
-- Show a list of shot of video to be annoted on the right side
-- Ask to the annotator for each shot selected:
-   * To play the shot
-   * To draw a square around the face corresponding to the evidence
-   * Or to click on a button to reject the shot if the person don't appear
-
- ![Face](Face.png)
-
-## Verification of speaking face
+## Verification of Speaking face identities
 
 #### Input data: 
  - A shot of a video
- - A face selected (provide by the previous step)
+ - A list of label proposed by the submissions for this shot
+ - The mapping list to correct the person names
+ - The evidence images
 
-#### Scenario :
-- Show the shot of the video
-- Draw a square on the face selected
-- Ask to the annotator:
-   * To play the shot
-   * To click on a button to validate that is a speaking face or not 
-
+#### Scenario:
+ - Showing the shot in a loop play
+ - Creating a list of person images that can be present in the shot (based on participant submissions):
+   + Correcting of the person names in the submissions with the mapping
+   + Counting the number of occurences for each person names corrected
+   + Finding the best evidence corresponding to these person names corrected
+   + Ranking of these evidences based on the number of occurrences
+ - Showing the first three best evidences (the video of the evidence stop at the annotated timestamp and with the bounding box)
+ - Showing a button to add evidences if needed
+ - Asking to the annotator for each evidences selected to:
+   + Move on the left once evidences where the corresponding person appears
+   + Move on the left twice evidences where the corresponding person appears **AND** speaks
+   + If an other person appears and speaks in the shot, to:
+     * Clic on the button **add** -> shows a list of additionnal evidence
+     * Select the good evidence or the question mark button
+   + Validate the annotation
+   
  ![Speaking_face](Speaking_face.png)
