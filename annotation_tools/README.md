@@ -1,8 +1,6 @@
-# StoryBoard
+# Collaborative annotation of MediaEval "Person Discovery" data
 
-The goal is to correct submissions of participants. The process is devided into multiple annotation tasks
-
-## Evidences annotation
+## Annotation tool #1: Evidences
 
 #### Input data: 
  - Person name
@@ -25,7 +23,7 @@ The goal is to correct submissions of participants. The process is devided into 
 
 ![OCR](OCR.png)
 
-## Verification of Speaking face identities
+## Annotation tool #2: talking faces
 
 #### Input data: 
  - A shot of a video
