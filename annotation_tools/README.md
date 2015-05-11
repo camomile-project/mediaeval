@@ -12,7 +12,8 @@
 {
     "personName": "nicolas_sarkozi",
     "shot": _ID_SHOT,
-    "source": "audio|image"
+    "source": "image",
+    ... ??? ...
 }
 ```
 
@@ -40,6 +41,17 @@
  - A list of label proposed by the submissions for this shot
  - The mapping list to correct the person names
  - The evidence images
+
+```json
+{
+    "shot": _ID_SHOT,
+    "personName": ["nicolas_sarkozi", "francois_hollande", ...],
+    ... ??? ...
+}
+```
+
+
+
 
 #### Scenario:
  - Showing the shot in a loop play
