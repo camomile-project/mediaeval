@@ -7,7 +7,17 @@
  - A shot of a video
  - Evidence type (audio for pronounced names, image for written names)
  - Already corrected name near from the person name
- 
+
+```json
+{
+    "personName": "nicolas_sarkozi",
+    "shot": _ID_SHOT,
+    "source": "audio|image"
+}
+```
+
+`GET /annotation/_ID_SHOT` can be used to get more info about the shot (medium, start time and end time).
+
 #### Scenario:
  - Show the person name
  - Show the shot of the video to be annotated (+/- 5 seconds for audio evidence)
