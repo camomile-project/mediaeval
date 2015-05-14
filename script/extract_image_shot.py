@@ -16,8 +16,8 @@ if __name__ == '__main__':
     l_image_to_save = {}
     for line in open(args['<shot_seg>']).read().splitlines():
         videoID, shotID, startTime, endTime, startFrame, endFrame = line.split(' ')
-        l_image_to_save[int(startFrame)] = [args['<outputPath>']+'/'+shotID+'_'+startTime+'.jpg']
-        l_image_to_save[int(endFrame)] = [args['<outputPath>']+'/'+shotID+'_'+endTime+'.jpg']
+        l_image_to_save[int(startFrame)] = args['<outputPath>']+'/'+shotID+'_'+startTime+'.jpg'
+        l_image_to_save[int(endFrame)] = args['<outputPath>']+'/'+shotID+'_'+endTime+'.jpg'
 
     capture = cv2.VideoCapture(args['<video_file>'])
     nb_frame = int(capture.get(cv.CV_CAP_PROP_FRAME_COUNT))
